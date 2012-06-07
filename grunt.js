@@ -4,6 +4,8 @@
 //
 module.exports = function(grunt) {
 
+	grunt.loadNpmTasks('grunt-handlebars');
+
   grunt.initConfig({
 
     // The clean task ensures all files are removed from the dist/ directory so
@@ -41,6 +43,14 @@ module.exports = function(grunt) {
         "app/templates/**/*.html"
       ]
     },
+    
+    // https://github.com/groupdock/grunt-handlebars
+    handlebars: {
+	    all: {
+	    	src: 'app/templates',
+	    	dest: 'dest/dest.js'
+	    }
+  	},
 
     // The concatenate task is used here to merge the almond require/define
     // shim and the templates into the application code.  It's named
@@ -150,5 +160,10 @@ module.exports = function(grunt) {
   // The release task will run the debug tasks and then minify the
   // dist/debug/require.js file and CSS files.
   grunt.registerTask("release", "default min mincss");
+
+  grunt.registerTask("handlebars", "handlebars");
+ 
+ 	//grunt.loadTasks("tasks");
+
 
 };

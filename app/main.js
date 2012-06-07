@@ -4,10 +4,33 @@ require([
 
   // Libs
   "jquery",
-  "backbone"
+  "backbone",
+  "underscore",
+  "handlebars",
+  "modules/ConcreteExampleView"
 ],
 
-function(app, $, Backbone, Example) {
+function(app, $, Backbone, _, Handlebars, ConcreteExampleView, Example) {
+
+findAndRegisterPartials = function($scanElement){
+	var templateValues = {
+		allPages : $scanElement.children('script[type="text/x-handlebars-template"]').map(function() {
+			// console.debug("Container pages were created: "+ this.id.replace(/template_page_/, "page_"));
+			return {
+				'templatePartialPageID' : this.id
+				//,'pageID' : this.id.replace(/template_page_/, "page_"),
+			};
+		}).toArray()
+	};
+	
+	$.each(templateValues.allPages, function(index, foundPage) {
+		// console.debug("page partial was registered: "+ foundPage.templatePartialPageID);
+		Handlebars.registerPartial(foundPage.templatePartialPageID, $("#" + foundPage.templatePartialPageID).html());
+	});
+};
+findAndRegisterPartials($("body"));
+
+
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
@@ -16,7 +39,7 @@ function(app, $, Backbone, Example) {
     },
 
     index: function() {
-
+		new ConcreteExampleView();
     }
   });
 

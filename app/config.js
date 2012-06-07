@@ -10,14 +10,29 @@ require.config({
 
     // Libraries
     jquery: "../assets/js/libs/jquery",
+    jquerymobile: "../assets/js/libs/jquerymobile",
     lodash: "../assets/js/libs/lodash",
-    backbone: "../assets/js/libs/backbone"
+    underscore: "../assets/js/libs/underscore",
+    backbone: "../assets/js/libs/backbone",
+    handlebars: "../assets/js/libs/handlebars"
   },
 
   shim: {
     backbone: {
       deps: ["lodash", "jquery"],
       exports: "Backbone"
+    },
+     handlebars: {
+      deps: ["lodash", "jquery"],
+      exports: "Handlebars"
+    },
+    jquerymobile: {
+      deps: ["lodash", "jquery"],
+      exports: "jquerymobile"
+    },
+    underscore: {
+      deps: ["lodash", "backbone"],
+      exports: "_"
     }
   }
 });
