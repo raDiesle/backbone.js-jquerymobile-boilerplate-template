@@ -8,7 +8,7 @@ define([
 ],
 
 function(app, Backbone, BasicView) {
-  var Concreteexampleview = app.module();
+  var Welcome = app.module();
 
   Concreteexampleview = BasicView.extend({
   	id: "content",
@@ -17,5 +17,5 @@ function(app, Backbone, BasicView) {
   	}
   });
 
-  return Concreteexampleview;
+  return Welcome;
 });
