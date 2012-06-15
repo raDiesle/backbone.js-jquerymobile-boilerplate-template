@@ -31,6 +31,7 @@ With JQM I recommend to have your code as simple as possible by having a view pe
 and do full rendering of handlebars.js or underscore templates.
 
 There are discussions about performance gain, if you only rerender parts in the DOM, which are needed.
+
 I disagree. With handlebars.js to render a page-template takes usually less than 3 ms.
 It's only one DOM-access to insert the generated HTML.
 
@@ -75,6 +76,10 @@ That's why it's extending Validateable.
 #### [`Validateable`](app/modules/Validateable.js)
 Extending Validateable will use the jquery.validate plugin with jquery mobile like described here:
 http://www.elijahmanor.com/2011/02/jquery-mobile-form-validation.html
+
+The validate rules are part of the model under this property
+this.model.settings.validation.rules
+
 
 By convention it expects an 
 
