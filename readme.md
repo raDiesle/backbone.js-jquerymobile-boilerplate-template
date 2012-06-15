@@ -14,6 +14,8 @@ Currently I recommand to use the Basic classes to support backbone + jquery mobi
         ...
 
 ##### TODO
+Add mobile init properties to code!
+
 cleanup require.js dependency management and add view examples.        
         
 ##### References       
@@ -26,6 +28,11 @@ http://coenraets.org/blog/2012/03/using-backbone-js-with-jquery-mobile/
 Thanks for them !
 
 ### General
+
+This project is an example by using the backbones default routing with JQM, as adviced by several people.
+
+Alternatively there is also a nice project, which supports a JQM router for backbone. 
+https://github.com/azicchetti/jquerymobile-router
 
 With JQM I recommend to have your code as simple as possible by having a view per page 
 and do full rendering of handlebars.js or underscore templates.
@@ -41,6 +48,24 @@ template code can be reused by partials.
 So, by convention over configuration, template ids look like:
 "template_"+pageID
 where the JQM page will be automatically generated and inserted into the DOM.
+
+### jquery mobile init properties
+
+To support right behavior in e.g. navigation and use default backbone.js routing, these are my preferred properties:
+
+```javascript
+   $(document).bind("mobileinit", function(){
+        $.mobile.ajaxEnabled = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+        $.mobile.linkBindingEnabled = false;
+        $.mobile.defaultPageTransition = "none";
+        $.mobile.page.prototype.options.degradeInputs.date = true; // optional
+        $.mobile.page.prototype.options.domCache = false; // optional
+        $.mobile.defaultDialogTransition = "none"; // optional
+      });
+  })
+```
 
 ### Classes to use
 
