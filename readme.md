@@ -21,6 +21,8 @@ cleanup require.js dependency management and add view examples.
 ##### References       
 The knownledge about how to run JQM with backbone is partial derived by results of several resources:
 
+http://stackoverflow.com/questions/10904433/jquery-mobile-require-js-and-backbone
+
 http://addyosmani.github.com/backbone-fundamentals/
 
 http://coenraets.org/blog/2012/03/using-backbone-js-with-jquery-mobile/
