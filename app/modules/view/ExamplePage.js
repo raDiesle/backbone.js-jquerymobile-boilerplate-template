@@ -4,18 +4,16 @@ define([
 
   // Third-party libraries.
   "backbone",
-  "modules/BasicView"
+  "modules/view/abstract/BasicView"
 ],
 
 function(app, Backbone, BasicView) {
-  var Welcome = app.module();
-
-  Concreteexampleview = BasicView.extend({
-  	id: "content",
+  return BasicView.extend({
+  	id: "example_page",
   	getSpecificTemplateValues : function(){
-  		return "something"
+  		return {
+  			calculation : "One plus three is" + (1+3)	
+  		}
   	}
   });
-
-  return Welcome;
 });

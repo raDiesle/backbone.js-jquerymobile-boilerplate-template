@@ -4,18 +4,33 @@ require([
 
   // Libs
   "jquery",
+  "jqueryvalidation",
   "backbone",
+  "backbone_super",
   "underscore",
   "handlebars",
-  "modules/ConcreteExampleView"
+  "jquerymobile",
+  "modules/view/ExamplePage",
+  "modules/view/ExampleDialog",
 ],
 
-function(app, $, Backbone, _, Handlebars, ConcreteExampleView, Example) {
+function(app, $, jqValidationUnused, Backbone, bbsuperUnused, _, Handlebars, jqmUnused, ExamplePage, ExampleDialog) {
+
+ $(document).bind("mobileinit", function(){
+        $.mobile.ajaxEnabled = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+        $.mobile.linkBindingEnabled = false;
+        $.mobile.defaultPageTransition = "none";
+        $.mobile.page.prototype.options.degradeInputs.date = true; // optional
+        $.mobile.page.prototype.options.domCache = false; // optional
+        $.mobile.defaultDialogTransition = "none"; // optional
+});
 
 findAndRegisterPartials = function($scanElement){
 	var templateValues = {
 		allPages : $scanElement.children('script[type="text/x-handlebars-template"]').map(function() {
-			// console.debug("Container pages were created: "+ this.id.replace(/template_page_/, "page_"));
+			console.debug("Container pages were created: "+ this.id.replace(/template_page_/, "page_"));
 			return {
 				'templatePartialPageID' : this.id
 				//,'pageID' : this.id.replace(/template_page_/, "page_"),
@@ -24,7 +39,7 @@ findAndRegisterPartials = function($scanElement){
 	};
 	
 	$.each(templateValues.allPages, function(index, foundPage) {
-		// console.debug("page partial was registered: "+ foundPage.templatePartialPageID);
+		console.debug("page partial was registered: "+ foundPage.templatePartialPageID);
 		Handlebars.registerPartial(foundPage.templatePartialPageID, $("#" + foundPage.templatePartialPageID).html());
 	});
 };
@@ -32,18 +47,36 @@ findAndRegisterPartials($("body"));
 
 
 
+
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
     routes: {
       "": "index",
-      "/register": "register"
+      "openDialog" : "openDialog"
+      
     },
 
     index: function() {
-		new Welcome();
+		new ExamplePage();
     },
-    register: function(){
-    	new RegisterForm();
+    openDialog: function(){
+		var myModel = Backbone.Model.extend({
+			settings : {
+				validation : {
+					rules : {
+						name : {
+							"required" : true,
+							"digits" : true,
+							"min" : 6
+						}
+					}
+				}
+			}
+		});
+
+		var modelInstance = new myModel();
+		
+		new ExampleDialog({model : modelInstance});
     }
   });
 

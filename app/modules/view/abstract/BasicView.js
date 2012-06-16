@@ -5,8 +5,7 @@ define([
   // Third-party libraries.
   "underscore",
   "backbone",
-  "handlebars",
-  "jquerymobile"
+  "handlebars"
 ],
 
 function(app, _, Backbone, Handlebars) {

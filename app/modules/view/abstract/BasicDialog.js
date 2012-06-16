@@ -3,13 +3,13 @@ define([
   "app",
 
   // Third-party libraries.
-  "backbone"
+  "backbone",
+  "modules/view/abstract/Validateable"
 ],
 
-function(app, Backbone) {
-  var Basicdialog = app.module();
+function(app, Backbone, Validateable) {
 
-  Basicdialog = Validateable.extend({
+  var Basicdialog = Validateable.extend({
 	role : "dialog",
 	transparentBackgroundPageElID : undefined,
 	attributes : function(){

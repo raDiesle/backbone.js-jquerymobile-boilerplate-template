@@ -4,7 +4,7 @@
 //
 module.exports = function(grunt) {
 
-	grunt.loadNpmTasks('grunt-handlebars');
+	
 
   grunt.initConfig({
 
@@ -46,10 +46,9 @@ module.exports = function(grunt) {
     
     // https://github.com/groupdock/grunt-handlebars
     handlebars: {
-	    all: {
-	    	src: 'app/templates',
-	    	dest: 'dest/dest.js'
-	    }
+	    "result.js": [
+	    	'app/templates/*.handlebars'
+	    ]
   	},
 
     // The concatenate task is used here to merge the almond require/define
@@ -161,9 +160,10 @@ module.exports = function(grunt) {
   // dist/debug/require.js file and CSS files.
   grunt.registerTask("release", "default min mincss");
 
-  grunt.registerTask("handlebars", "handlebars");
- 
- 	//grunt.loadTasks("tasks");
+ 	// grunt.loadTasks("tasks/handlebars_contrib.js");
+ // grunt.loadNpmTasks('grunt-contrib');
+  // grunt.registerTask("handlebars", "handlebars");
 
+// grunt.loadNpmTasks('grunt-handlebars');
 
 };
