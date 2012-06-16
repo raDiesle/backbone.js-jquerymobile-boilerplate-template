@@ -15,6 +15,7 @@ Currently I recommand to use the Basic classes to support backbone + jquery mobi
 
 ##### TODO
 Add mobile init properties to code!
+Introduce handlebars task like described here : https://github.com/cowboy/grunt/issues/225
 
 cleanup require.js dependency management and add view examples.        
         
