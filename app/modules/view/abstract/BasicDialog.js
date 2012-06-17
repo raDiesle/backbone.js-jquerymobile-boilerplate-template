@@ -14,8 +14,7 @@ function(app, Backbone, Validateable) {
 	transparentBackgroundPageElID : undefined,
 	attributes : function(){
 		return {
-			"data-role" : this.role,
-			"class" :	"dialog_window_option"
+			"data-role" : this.role
 		}
 	},
 	render : function() {

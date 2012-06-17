@@ -30,14 +30,14 @@
 		<script id="template_example_page" type="text/x-handlebars-template">
 			Welcome to my page:
 			{{calculation}}
-			<a href="index.html#openDialog" data-role="button">open dialog</a>
+			<a href="#openDialog" data-role="button" data-ajax="false">open dialog</a>
 		</script>
 
 		<script id="template_example_dialog" type="text/x-handlebars-template">
 			{{currenttime}}
-			Please enter your name:
+			<p>Please enter your name:</p>
 			<form>
-				<input type="text" value="Wrong value (ZRHjhbf§&SD32)"/>
+				<input type="text" name="password" value="Wrong value (ZRHjhbf§&SD32)"/>
 				<a data-role="button" type="submit">Check input</a>				
 			</form>
 		</script>

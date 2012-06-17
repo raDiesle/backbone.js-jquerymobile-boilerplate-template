@@ -12,7 +12,7 @@ function(app, Backbone, BasicView) {
   	id: "example_page",
   	getSpecificTemplateValues : function(){
   		return {
-  			calculation : "One plus three is" + (1+3)	
+  			calculation : "One plus three is " + (1+3)	
   		}
   	}
   });

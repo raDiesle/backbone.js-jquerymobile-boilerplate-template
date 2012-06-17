@@ -64,7 +64,7 @@ findAndRegisterPartials($("body"));
 			settings : {
 				validation : {
 					rules : {
-						name : {
+						password : {
 							"required" : true,
 							"digits" : true,
 							"min" : 6
