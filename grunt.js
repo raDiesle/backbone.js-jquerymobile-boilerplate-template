@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     
     // https://github.com/groupdock/grunt-handlebars
     handlebars: {
-	    "result.js": [
+	    "app/alltemplates.js": [
 	    	'app/templates/*.handlebars'
 	    ]
   	},

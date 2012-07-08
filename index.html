@@ -20,7 +20,7 @@
 			</div>
 			<div data-role="content">
 				{{{whatis this}}}
-			{{> templatePartialPageID}}
+			    {{> templatePartialPageID}}
 			</div>
 			<div data-role="footer">
 			Footer
@@ -28,10 +28,21 @@
 		</script>
 
 		<script id="template_example_page" type="text/x-handlebars-template">
-			Welcome to my page:
+			<p>Welcome to my page:</p>
 			{{calculation}}
+            <p>go to second page <a href="#pages/second" data-ajax="false">Go to second page</a></p>
 			<a href="#openDialog" data-role="button" data-ajax="false">open dialog</a>
 		</script>
+
+        <script id="template_example_page_2" type="text/x-handlebars-template">
+            <p>Welcome to my second page.</p>
+            go to third page <a href="#pages/third">open third page</a>
+        </script>
+
+        <script id="template_example_page_3" type="text/x-handlebars-template">
+            <p>Welcome to my third page.</p>
+            go back to second page <a href="#pages/second">open second page</a>
+        </script>
 
 		<script id="template_example_dialog" type="text/x-handlebars-template">
 			{{currenttime}}

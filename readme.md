@@ -6,7 +6,7 @@ The project is about how to run backbone with jquery mobile and are proven.
 This is a ongoing template which is supposed to be used in backbone fundamentals.
 
 ##### STATUS
-Currently I recommand to use the Basic classes to support backbone + jquery mobile in your project.
+Go for it, jqm+backbone will work!
 
 * The template project is currently under heavy refactoring
 * The mechanism to load templates has to be improved
@@ -14,7 +14,6 @@ Currently I recommand to use the Basic classes to support backbone + jquery mobi
         ...
 
 ##### TODO
-Add mobile init properties to code!
 Introduce handlebars task like described here : https://github.com/cowboy/grunt/issues/225
 
 cleanup require.js dependency management and add view examples.        
@@ -45,15 +44,16 @@ There are discussions about performance gain, if you only rerender parts in the 
 I disagree. With handlebars.js to render a page-template takes usually less than 3 ms.
 It's only one DOM-access to insert the generated HTML.
 
-With jquery mobile I prefer to have a handlebars.js template per page.
+With jquery mobile it's a good idea to have one template per page/view.
 template code can be reused by partials.
 
 So, by convention over configuration, template ids look like:
 "template_"+pageID
 where the JQM page will be automatically generated and inserted into the DOM.
 
-### jquery mobile init properties
+### Settings
 
+#### jquery mobile init properties
 To support right behavior in e.g. navigation and use default backbone.js routing, these are my preferred properties:
 
 ```javascript
@@ -69,6 +69,11 @@ To support right behavior in e.g. navigation and use default backbone.js routing
       });
   })
 ```
+
+#### Backbone settings
+Backbone.history.start({ pushState: false });
+is used to work properly with forward/back buttons
+
 
 ### Classes to use
 

@@ -32,7 +32,7 @@ function(app, _, Backbone, Handlebars) {
 		return "template_basic_page_simple";	
 	},
 	getTemplateResult : function(templateDefinitionID, templateValues){
-		return Handlebars.compile($("#"+templateDefinitionID).html())(templateValues);
+		return Handlebars.compile($("#"+templateDefinitionID).html())(templateValues);//window.JST['app/templates/mytemplate.handlebars']//
 	},
 	getBasicPageTemplateResult : function(){
 		var templateValues = {templatePartialPageID : "template_"+this.id, headerTitle : this.getHeaderTitle()};

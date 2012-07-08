@@ -10,13 +10,16 @@ require.config({
 
     // Libraries
     jquery: "../assets/js/libs/jquery",
+    'jquerymobile.config' : 'jquerymobile.config',
     jquerymobile: "../assets/js/libs/jquerymobile",
     jqueryvalidation: "../assets/js/libs/jquery.validation",
     lodash: "../assets/js/libs/lodash",
     underscore: "../assets/js/libs/underscore",
     backbone: "../assets/js/libs/backbone",
-    backbone_super: "../assets/js/libs/backbone_super", 
-    handlebars: "../assets/js/libs/handlebars"
+    backbone_super: "../assets/js/libs/backbone_super",
+    handlebars: "../assets/js/libs/handlebars",
+   'handlebars.compiled': "alltemplates.js"
+
   },
 
   shim: {
@@ -28,13 +31,13 @@ require.config({
       deps: ["backbone"],
       exports: "_super"
     },
-     handlebars: {
-      deps: ["jquery"],
+    handlebars: {
       exports: "Handlebars"
     },
+    'handlebars.compiled' : ['handlebars'],
+    'jquerymobile.config' : ['jquery'],
     jquerymobile: {
-      deps: ["jquery"],
-      exports: "jquerymobile"
+      deps: ["jquery", 'jquerymobile.config']
     },
     underscore: {
       deps: ["backbone"],
@@ -44,6 +47,5 @@ require.config({
     	deps: ["jquery"],
     	exports: "jqueryvalidation"
     }
-    
   }
 });

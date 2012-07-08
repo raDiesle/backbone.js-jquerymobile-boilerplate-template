@@ -4,28 +4,20 @@ require([
 
   // Libs
   "jquery",
-  "jqueryvalidation",
+//  "jqueryvalidation",
   "backbone",
   "backbone_super",
   "underscore",
   "handlebars",
+  "handlebars.compiled",
   "jquerymobile",
   "modules/view/ExamplePage",
-  "modules/view/ExampleDialog",
+  "modules/view/ExamplePage2",
+  "modules/view/ExamplePage3",
+  "modules/view/ExampleDialog"
 ],
-
-function(app, $, jqValidationUnused, Backbone, bbsuperUnused, _, Handlebars, jqmUnused, ExamplePage, ExampleDialog) {
-
- $(document).bind("mobileinit", function(){
-        $.mobile.ajaxEnabled = false;
-        $.mobile.hashListeningEnabled = false;
-        $.mobile.pushStateEnabled = false;
-        $.mobile.linkBindingEnabled = false;
-        $.mobile.defaultPageTransition = "none";
-        $.mobile.page.prototype.options.degradeInputs.date = true; // optional
-        $.mobile.page.prototype.options.domCache = false; // optional
-        $.mobile.defaultDialogTransition = "none"; // optional
-});
+//    jqValidationUnused
+function(app, $, Backbone, bbsuperUnused, _, Handlebars, handlebarscompUnused, jqmUnused, ExamplePage, ExamplePage2, ExamplePage3, ExampleDialog) {
 
 findAndRegisterPartials = function($scanElement){
 	var templateValues = {
@@ -52,14 +44,17 @@ findAndRegisterPartials($("body"));
   var Router = Backbone.Router.extend({
     routes: {
       "": "index",
-      "openDialog" : "openDialog"
-      
+      "openDialog" : "openDialog",
+      'pages/second' : 'secondPage',
+      'pages/third' : 'thirdPage'
     },
 
     index: function() {
 		new ExamplePage();
     },
     openDialog: function(){
+        console.debug("dialog was requested");
+
 		var myModel = Backbone.Model.extend({
 			settings : {
 				validation : {
@@ -77,6 +72,13 @@ findAndRegisterPartials($("body"));
 		var modelInstance = new myModel();
 		
 		new ExampleDialog({model : modelInstance});
+    },
+    secondPage : function(){
+        console.debug("second page openened");
+        new ExamplePage2();
+    },
+    thirdPage : function(){
+       new ExamplePage3();
     }
   });
 
@@ -89,7 +91,7 @@ findAndRegisterPartials($("body"));
     app.router = new Router();
 
     // Trigger the initial route and enable HTML5 History API support
-    Backbone.history.start({ pushState: true });
+    Backbone.history.start({ pushState: false });
   });
 
   // All navigation that is relative should be passed through the navigate
