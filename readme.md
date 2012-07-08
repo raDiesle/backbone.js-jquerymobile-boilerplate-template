@@ -1,7 +1,8 @@
 Backbone and jquerymobile JQM Boilerplate code
 ====================
 
-The project is about how to run backbone with jquery mobile and are proven.
+
+The project is about how to run backbone with jquery mobile, require.js and handlebars.js.
 
 This is a ongoing template which is supposed to be used in backbone fundamentals.
 
@@ -51,9 +52,8 @@ So, by convention over configuration, template ids look like:
 "template_"+pageID
 where the JQM page will be automatically generated and inserted into the DOM.
 
-### Settings
+### jquery mobile init properties
 
-#### jquery mobile init properties
 To support right behavior in e.g. navigation and use default backbone.js routing, these are my preferred properties:
 
 ```javascript
