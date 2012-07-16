@@ -2,7 +2,28 @@ Backbone and jquerymobile JQM Boilerplate code
 ====================
 
 
-The project is about how to run backbone with jquery mobile, require.js and handlebars.js.
+The goal of this project is to share a bulletproof template to build a real application with JQM and backbone.js.
+With good documentation.
+
+
+It's consisting of:
+- backbone.js
+- backbone_super (supports multiple hierarchies of inerheritance)
+- jquery
+- jquery mobile
+- require.js (as an AMD loader)
+- handlebars.js. ( instead, underscore js or any other template engine can be used)
+- grunt.js as build tool, to precompile handlebars.js templates, and r.js optimizer tasks
+
+- code structure and super-classes for clean code and easy reuse
+
+Compared to existing projects:
+
+- https://github.com/Filirom1/jquery-mobile-backbone-requirejs
+uses the jQuery Mobile Router plugin ( extends/manipulates  the existing backbone.js routing)
+
+- https://github.com/ccoenraets/backbone-jquerymobile
+
 
 This is a ongoing template which is supposed to be used in backbone fundamentals.
 
