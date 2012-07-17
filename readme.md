@@ -28,7 +28,7 @@ Go for it, jqm+backbone will work!
 * Introduce handlebars task like described here : https://github.com/cowboy/grunt/issues/225
 * cleanup require.js dependency management and add view examples. 
 * make an Addy Osmani TodoMVC application out of it.                
-
+* make a mobile + desktop app out of it, using common code
 
 ### General
 
@@ -212,6 +212,8 @@ http://addyosmani.github.com/backbone-fundamentals/
 http://coenraets.org/blog/2012/03/using-backbone-js-with-jquery-mobile/
 
 https://github.com/azicchetti/jquerymobile-router
+
+https://github.com/buildmobile/backbone.js/tree/master/js
 
 Thanks for them !
 
