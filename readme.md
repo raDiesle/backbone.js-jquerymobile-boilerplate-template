@@ -2,40 +2,35 @@ Backbone and jquerymobile JQM Boilerplate code
 ====================
 
 
-The project is about how to run backbone with jquery mobile, require.js and handlebars.js.
+The goal of this project is to share a bulletproof template to build a real application with JQM and backbone.js.
+With good documentation.
+
+
+
+It's consisting of:
+- backbone.js
+- backbone_super (supports multiple hierarchies of inerheritance)
+- jquery
+- jquery mobile
+- require.js (as an AMD loader)
+- handlebars.js. ( instead, underscore js or any other template engine can be used)
+- grunt.js as build tool, to precompile handlebars.js templates, and r.js optimizer tasks
+
+- code structure and super-classes for clean code and easy reuse
 
 This is a ongoing template which is supposed to be used in backbone fundamentals.
 
 ##### STATUS
 Go for it, jqm+backbone will work!
 
-* The template project is currently under heavy refactoring
-* The mechanism to load templates has to be improved
-* findAndRegisterPartials has to be moved
-        ...
-
-##### TODO
-Introduce handlebars task like described here : https://github.com/cowboy/grunt/issues/225
-
-cleanup require.js dependency management and add view examples.        
-        
-##### References       
-The knownledge about how to run JQM with backbone is partial derived by results of several resources:
-
-http://stackoverflow.com/questions/10904433/jquery-mobile-require-js-and-backbone
-
-http://addyosmani.github.com/backbone-fundamentals/
-
-http://coenraets.org/blog/2012/03/using-backbone-js-with-jquery-mobile/
-
-Thanks for them !
+* Documentation and usage of handlebars templating is currently under construction
+* The mechanism to load templates has to be improved, findAndRegisterPartials has to be moved
+* Introduce handlebars task like described here : https://github.com/cowboy/grunt/issues/225
+* cleanup require.js dependency management and add view examples. 
+* make an Addy Osmani TodoMVC application out of it.                
+* make a mobile + desktop app out of it, using common code
 
 ### General
-
-This project is an example by using the backbones default routing with JQM, as adviced by several people.
-
-Alternatively there is also a nice project, which supports a JQM router for backbone. 
-https://github.com/azicchetti/jquerymobile-router
 
 With JQM I recommend to have your code as simple as possible by having a view per page 
 and do full rendering of handlebars.js or underscore templates.
@@ -52,30 +47,9 @@ So, by convention over configuration, template ids look like:
 "template_"+pageID
 where the JQM page will be automatically generated and inserted into the DOM.
 
-### jquery mobile init properties
-
-To support right behavior in e.g. navigation and use default backbone.js routing, these are my preferred properties:
-
-```javascript
-   $(document).bind("mobileinit", function(){
-        $.mobile.ajaxEnabled = false;
-        $.mobile.hashListeningEnabled = false;
-        $.mobile.pushStateEnabled = false;
-        $.mobile.linkBindingEnabled = false;
-        $.mobile.defaultPageTransition = "none";
-        $.mobile.page.prototype.options.degradeInputs.date = true; // optional
-        $.mobile.page.prototype.options.domCache = false; // optional
-        $.mobile.defaultDialogTransition = "none"; // optional
-      });
-  })
-```
-
-#### Backbone settings
-Backbone.history.start({ pushState: false });
-is used to work properly with forward/back buttons
 
 
-### Classes to use
+### Prepared classes for simple usage
 
 #### [`BasicView`](app/modules/BasicView.js)
 An example usage for a simple JQM page:
@@ -173,9 +147,74 @@ View the Backbone Boilerplate documentation here:
 
 [GitHub Wiki](https://github.com/tbranyen/backbone-boilerplate/wiki)
 
-## Build process ##
+### How to built the project, precompile handlebars.js files and concat files 
 
 To use the new and improved build process, please visit the 
 [grunt-bbb](https://github.com/backbone-boilerplate/grunt-bbb)
 plugin repo and follow the instructions to install.  Basing your project off
 this repo will allow the `bbb` commands to work out-of-the-box.
+
+
+## Deeper explanation of the code
+
+### jquery mobile init properties
+
+To support right behavior in e.g. navigation and use default backbone.js routing, use the following properties:
+
+```javascript
+   $(document).bind("mobileinit", function(){
+        $.mobile.ajaxEnabled = false;
+        $.mobile.hashListeningEnabled = false;
+        $.mobile.pushStateEnabled = false;
+        $.mobile.linkBindingEnabled = false;
+        $.mobile.defaultPageTransition = "none";
+        $.mobile.page.prototype.options.degradeInputs.date = true; // optional
+        $.mobile.page.prototype.options.domCache = false; // optional
+        $.mobile.defaultDialogTransition = "none"; // optional depends on performance
+      });
+  })
+```
+
+If you want to enable transitions per device ( where you expect good performance) you can use logic per device like described here http://backbonefu.com/2012/01/jquery-mobile-and-backbone-js-the-ugly/:
+
+```javascript
+var iosDevice = ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) ? true : false;
+ 
+  $.extend(  $.mobile , {
+    slideText :  (iosDevice) ? "slide" : "none",
+    slideUpText :  (iosDevice) ? "slideup" : "none",
+    defaultPageTransition:(iosDevice) ? "slide" : "none",
+    defaultDialogTransition:(iosDevice) ? "slide" : "none"
+  });
+```
+
+#### Backbone settings
+Backbone.history.start({ pushState: false });
+is used to work properly with forward/back buttons
+
+
+
+##### References and similar projects
+
+- https://github.com/Filirom1/jquery-mobile-backbone-requirejs
+
+uses the jQuery Mobile Router plugin ( extends/manipulates  the existing backbone.js routing)
+
+- https://github.com/ccoenraets/backbone-jquerymobile uses no AMD
+
+
+The knownledge about how to run JQM with backbone is partial derived by results of several resources:
+
+http://stackoverflow.com/questions/10904433/jquery-mobile-require-js-and-backbone
+
+http://addyosmani.github.com/backbone-fundamentals/
+
+http://coenraets.org/blog/2012/03/using-backbone-js-with-jquery-mobile/
+
+https://github.com/azicchetti/jquerymobile-router
+
+https://github.com/buildmobile/backbone.js/tree/master/js
+
+Thanks for them !
+
+
