@@ -20,6 +20,15 @@ It's consisting of:
 
 This is a ongoing template which is supposed to be used in backbone fundamentals.
 
+#### Run it
+* checkout from git
+* install node.js and run:
+* npm install -g grunt
+* npm install -g bbb
+* bbb handlebars
+* bbb server
+* go to http://localhost:8000
+
 ##### STATUS
 Go for it, jqm+backbone will work!
 
