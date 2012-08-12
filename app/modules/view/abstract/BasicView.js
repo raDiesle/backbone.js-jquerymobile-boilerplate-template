@@ -1,17 +1,11 @@
 define([
-    // Global application context.
-    "app",
-
-    // Third-party libraries.
     "underscore",
     "backbone",
     "handlebars"
 ],
 
-    function (app, _, Backbone, Handlebars) {
-        var BasicView = app.module();
-
-        BasicView = Backbone.View.extend({
+    function (_, Backbone, Handlebars) {
+        var BasicView = Backbone.View.extend({
             initialize:function () {
                 _.bindAll();
                 this.render();

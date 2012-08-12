@@ -1,29 +1,23 @@
 require([
-    // Global
-    "app",
-
-    // Libs
     "jquery",
     "jqueryvalidation",
     "backbone",
     "backbone_super",
     "underscore",
     "handlebars",
+    "initialize.config",
     "handlebars.compiled",
     "jquerymobile",
-    "modules/view/ExamplePage",
+    "modules/view/Todos",
     "modules/view/ExamplePage2",
     "modules/view/ExamplePage3",
     "modules/view/ExampleDialog"
 ],
 //    jqValidationUnused
-    function (app, $, jqueryUnused, Backbone, bbsuperUnused, _, Handlebars, handlebarscompUnused, jqmUnused, ExamplePage, ExamplePage2, ExamplePage3, ExampleDialog) {
-
-        Handlebars.templates = window['JST'];
-        Handlebars.partials = Handlebars.templates;
+    function ($, jqueryUnused, Backbone, bbsuperUnused, _, Handlebars, initializeSettings, handlebarscompUnused, jqmUnused, Todos, ExamplePage2, ExamplePage3, ExampleDialog) {
+        initializeSettings.init();
 
 
-        // Defining the application router, you can attach sub routers here.
         var Router = Backbone.Router.extend({
             routes:{
                 "":"index",
@@ -33,7 +27,7 @@ require([
             },
 
             index:function () {
-                new ExamplePage();
+                new Todos();
             },
             openDialog:function () {
                 console.debug("dialog was requested");
@@ -65,44 +59,8 @@ require([
             }
         });
 
-        // Treat the jQuery ready function as the entry point to the application.
-        // Inside this function, kick-off all initialization, everything up to this
-        // point should be definitions.
         $(function () {
-            // Define your master router on the application namespace and trigger all
-            // navigation from this instance.
-            app.router = new Router();
-
-
-            $.each(window.JST, function (index, value) {
-                console.debug("Registered" + value);
-                Handlebars.registerPartial(value);
-            });
-
-            // Trigger the initial route and enable HTML5 History API support
+            new Router();
             Backbone.history.start({ pushState:false });
         });
-
-        // All navigation that is relative should be passed through the navigate
-        // method, to be processed by the router. If the link has a `data-bypass`
-        // attribute, bypass the delegation completely.
-        $(document).on("click", "a:not([data-bypass])", function (evt) {
-            // Get the anchor href and protcol
-            var href = $(this).attr("href");
-            var protocol = this.protocol + "//";
-
-            // Ensure the protocol is not part of URL, meaning it's relative.
-            if (href && href.slice(0, protocol.length) !== protocol &&
-                href.indexOf("javascript:") !== 0) {
-                // Stop the default event to ensure the link will not cause a page
-                // refresh.
-                evt.preventDefault();
-
-                // `Backbone.history.navigate` is sufficient for all Routers and will
-                // trigger the correct events. The Router's internal `navigate` method
-                // calls this anyways.
-                Backbone.history.navigate(href, true);
-            }
-        });
-
     });
