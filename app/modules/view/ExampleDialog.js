@@ -1,9 +1,6 @@
 define([
-// Global application context.
-"app",
-
-// Third-party libraries.
-"backbone", "modules/view/abstract/BasicDialog"], function(app, Backbone, BasicDialog) {
+"backbone", "modules/view/abstract/BasicDialog"],
+    function(Backbone, BasicDialog) {
 	
 	return BasicDialog.extend({
 		id : "example_dialog",

@@ -1,2 +1,0 @@
-this['JST'] = this['JST'] || {};
-

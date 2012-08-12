@@ -1,15 +1,11 @@
 define([
-    // Global application context.
-    "app",
-
-    // Third-party libraries.
     "backbone",
     "modules/view/abstract/BasicView"
 ],
 
-    function (app, Backbone, BasicView) {
+    function (Backbone, BasicView) {
 
-        Validateable = BasicView.extend({
+        var Validateable = BasicView.extend({
             onSuccessfulValidation:undefined,
             events:{
                 "click a[type='submit']":"validateForm"
