@@ -1,6 +1,10 @@
 Backbone and jquerymobile JQM Boilerplate code
 ====================
 
+Current State:
+Wait until monday, where due to https://github.com/raDiesle/backbone.js-jquerymobile-boilerplate-template/issues/1
+handlebars.js partials are not working properly with the grunt handlebars plugin.
+
 
 The goal of this project is to share a bulletproof template to build a real application with JQM and backbone.js.
 With good documentation.
