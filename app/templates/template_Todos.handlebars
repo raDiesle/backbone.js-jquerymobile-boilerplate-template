@@ -1,11 +1,4 @@
-    {{> _header}}
+    {{> _welcome_partial}}
     {{calculation}}
     <p>go to second page <a href="#pages/second" data-ajax="false">Go to second page</a></p>
     <a href="#openDialog" data-role="button" data-ajax="false">open dialog</a>
-
-<div class="view">
-	<input class="{{completed}}" type="checkbox" {{#if completed}} 'checked'{{/if}}
-	<label>title</label>
-	<button class="destroy"></button>
-</div>
-<input class="edit" value="title

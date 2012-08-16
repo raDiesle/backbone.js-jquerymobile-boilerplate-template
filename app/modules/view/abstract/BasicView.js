@@ -1,7 +1,8 @@
 define([
     "underscore",
     "backbone",
-    "handlebars"
+    "handlebars",
+    "handlebars_helpers"
 ],
 
     function (_, Backbone, Handlebars) {

@@ -44,7 +44,7 @@ module.exports = function (grunt) {
         },
 
         handlebars:{
-            "app/alltemplates.js":'app/templates/**/*'
+            "dist/debug/handlebars_packaged.js":'app/templates/**/*'
         },
 
         watch:{

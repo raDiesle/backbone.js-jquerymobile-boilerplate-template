@@ -2,18 +2,22 @@ Backbone and jquerymobile JQM Boilerplate code
 ====================
 
 #### Current State:
-Wait until monday, where due to https://github.com/raDiesle/backbone.js-jquerymobile-boilerplate-template/issues/1
+Wait until monday,
+
+where due to https://github.com/raDiesle/backbone.js-jquerymobile-boilerplate-template/issues/1
 handlebars.js partials are not working properly with the grunt handlebars plugin.
 
 
-The goal of this project is to share a bulletproof template to build a real application with JQM and backbone.js.
-With good documentation.
+The goal of this project is to share a bulletproof template to build
+
+a real application with JQM and backbone.jswith good documentation.
 
 
 
 It's consisting of:
 - backbone.js
 - backbone_super (supports multiple hierarchies of inerheritance)
+- lodash ( improved version of underscore)
 - jquery
 - jquery mobile
 - require.js (as an AMD loader)
@@ -22,14 +26,17 @@ It's consisting of:
 
 - code structure and super-classes for clean code and easy reuse
 
+
 This is a ongoing template which is supposed to be used in backbone fundamentals.
 
 #### Run it
 * checkout from git
+* cd to the project folder
 * install node.js and run:
 * npm install -g grunt
-* npm install -g bbb
-* bbb handlebars
+* npm install -g bbb              (is a grunt addon, which offers backbone templates and task collections like grunt-contrib)
+* npm install -g grunt-contrib    ( needed because you'll need the newest version)
+* bbb handlebars                  ( precompiles templates to javascript functions)
 * bbb server
 * go to http://localhost:8000
 
@@ -42,6 +49,7 @@ Go for it, jqm+backbone will work!
 * cleanup require.js dependency management and add view examples. 
 * make an Addy Osmani TodoMVC application out of it.                
 * make a mobile + desktop app out of it, using common code
+* add tests ( jasmine + sinon.js + + phantom.js ? +continous integration  with jstestdriver and jenkins)
 
 ### General
 
