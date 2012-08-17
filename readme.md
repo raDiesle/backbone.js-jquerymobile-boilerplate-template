@@ -1,57 +1,62 @@
 Backbone and jquerymobile JQM Boilerplate code
-====================
+==============================================
+
+This project provides a bulletproof template + build process to develop
+an application by using jQuery mobile and backbone.js
+The aim is to provide it in Addy Osmanis [Backbone Fundamentals](https://github.com/addyosmani/backbone-fundamentals)
+
+It consists of:
+- [Backbone.js](http://backbonejs.org/) 0.9.2
+- extended [super](https://gist.github.com/2423599) call (supports multiple hierarchies of inerheritance)
+- [Lodash](http://lodash.com/) ( performance improved version of underscore + AMD support) 0.5
+- [jQuery Toolkit](http://jquery.com/) 1.8.0
+- [jQuery Mobile](http://jquerymobile.com/) 1.1.1
+- [Require.js](http://requirejs.org/) (as an AMD loader) 2.0.5
+- [Handlebars.js](http://handlebarsjs.com/) ( instead, underscore js or any other template engine can be used) 1.0.beta.6
+- [Grunt.js](https://github.com/cowboy/grunt) as build tool, like ant or maven, to precompile handlebars.js templates, and r.js optimizer tasks
+- [Grunt bbb](https://github.com/backbone-boilerplate/grunt-bbb) a collection of tasks, containing [grunt-contrib](https://github.com/gruntjs/grunt-contrib) task collection
+
+- code structure and super-classes for clean code and easy reuse
+
 
 #### Current State:
-Wait until monday,
+Wait until monday, 20. August 2012
 
 where due to https://github.com/raDiesle/backbone.js-jquerymobile-boilerplate-template/issues/1
 handlebars.js partials are not working properly with the grunt handlebars plugin.
 
 
-The goal of this project is to share a bulletproof template to build
+#### Quick start
 
-a real application with JQM and backbone.jswith good documentation.
-
-
-
-It's consisting of:
-- backbone.js
-- backbone_super (supports multiple hierarchies of inerheritance)
-- lodash ( improved version of underscore)
-- jquery
-- jquery mobile
-- require.js (as an AMD loader)
-- handlebars.js. ( instead, underscore js or any other template engine can be used)
-- grunt.js as build tool, to precompile handlebars.js templates, and r.js optimizer tasks
-
-- code structure and super-classes for clean code and easy reuse
-
-
-This is a ongoing template which is supposed to be used in backbone fundamentals.
-
-#### Run it
-* checkout from git
-* cd to the project folder
-* install node.js and run:
-* npm install -g grunt
-* npm install -g bbb              (is a grunt addon, which offers backbone templates and task collections like grunt-contrib)
-* npm install -g grunt-contrib    ( needed because you'll need the newest version)
+* checkout from git with your favourite tool or cmd. For those who are new, I would recommand usage of Eclipse Git, Webstorm or Tortoise Git
+* open your command line tool
+* cd to the project folder "backbone.js-jquerymobile-boilerplate-template"
+* download and install [node.js](http://nodejs.org/) for your os system and run in your project folder:
+* npm install -g grunt            ( installs grunt command line tool)
+* npm install -g bbb              ( is a grunt addon, which offers backbone templates and task collections like grunt-contrib)
+* npm install grunt-contrib       ( needed to install not global, because you'll need the newest version)
 * bbb handlebars                  ( precompiles templates to javascript functions)
-* bbb server
+* bbb server                      ( runs server on your local machine in development mode)
 * go to http://localhost:8000
+* Before you start developing, enable the handlebars task, if any change is done on a file by running once:
+  bbb watch
 
-##### STATUS
-Go for it, jqm+backbone will work!
 
-* Documentation and usage of handlebars templating is currently under construction
-* The mechanism to load templates has to be improved, findAndRegisterPartials has to be moved
-* Introduce handlebars task like described here : https://github.com/cowboy/grunt/issues/225
-* cleanup require.js dependency management and add view examples. 
-* make an Addy Osmani TodoMVC application out of it.                
-* make a mobile + desktop app out of it, using common code
-* add tests ( jasmine + sinon.js + + phantom.js ? +continous integration  with jstestdriver and jenkins)
+### Table of contents
+* [General](#general)
+* [Basic classes](#basicclasses) : [Basic View](#basicclasses_basicview) [Basic Dialog (#basicclasses_basicdialog) [Validateable](#basisclasses_validateable)
+* [Handlebars](#handlebars)
+* [Grunt](#grunt)
+* [Grunt-contrib](#grunt_contrib)
+* [Settings](#settings)
+* [Todo/future plans](#todo)
+* [References/cooperation](#references)
 
-### General
+
+
+
+
+###<a name="general">General</a>
 
 With JQM I recommend to have your code as simple as possible by having a view per page 
 and do full rendering of handlebars.js or underscore templates.
@@ -70,45 +75,56 @@ where the JQM page will be automatically generated and inserted into the DOM.
 
 
 
-### Prepared classes for simple usage
+###<a name="basicclasses">Prepared classes for simple usage</a>
 
-#### [`BasicView`](app/modules/BasicView.js)
+#### <a name="basicclasses_basicview">[`BasicView`](app/modules/BasicView.js)</a>
+
+##### Use case:
+For any kind of new jquery mobile page
+
+##### How to use:
+
+* getSpecificTemplateValues() is an abstract method. The json values are used for the handlebars.js context variables.
+* id is the pageID
+* to e.g. support transparent dialogs, the page will be removed from the DOM when the same page is requested again.
+
+##### Examples:
+
 An example usage for a simple JQM page:
 ```javascript
 ConcreteExampleView = BasicView.extend({
     id: "content",
-  	getSpecificTemplateValues : function(){
+      getSpecificTemplateValues : function(){
   		return "something"
   	}
   });
 ```
 
-getSpecificTemplateValues() is an abstract method. The json values are used for the handlebars.js context variables.
 
-id is the pageID
+#### <a name="basicclasses_basicdialog">[`BasicDialog`](app/modules/BasicDialog.js)</a>
 
-to e.g. support transparent dialogs, the page will be removed from the DOM when the same page is requested again.
+##### Use case:
+It will render the page as dialog with or without validation
 
+##### How to use
 
-#### [`BasicDialog`](app/modules/BasicDialog.js)
-it will render the page as dialog
-
-If you want to support transparent dialogs, like described here
+*If you want to support transparent dialogs, like described here
 http://tqcblog.com/2012/04/19/transparent-jquery-mobile-dialogs/
-
 you have to define a transparentBackgroundPageElID
 
-In the past, I needed to do always validation in dialogs, because it contains form elements.
-That's why it's extending Validateable.
 
-#### [`Validateable`](app/modules/Validateable.js)
+
+##### Examples
+
+#### <a name="basicclasses_validateable">[`Validateable`](app/modules/Validateable.js)</a>
 Extending Validateable will use the jquery.validate plugin with jquery mobile like described here:
 http://www.elijahmanor.com/2011/02/jquery-mobile-form-validation.html
 
+##### Use case
 The validate rules are part of the model under this property
 this.model.settings.validation.rules
 
-
+##### How to use
 By convention it expects an 
 
 a[type='submit']  and a  form
@@ -117,8 +133,10 @@ and validation will be triggered by click on type submit
 
 To use it, you just have to override onSuccessfulValidation
 
+##### Examples
 
-#### Registering handlebars.js templates
+
+#### <a name="handlebars">Registering handlebars.js templates</a>
 To use handlebars.js templates and partials you have to register them first.
 
 The findAndRegisterPartials will do this job for all handlebars.js templates.
@@ -127,7 +145,7 @@ It is currently done in [`main.js`](app/main.js)
 
 
 
-## Usage of grunt
+### <a name="grunt">Usage of grunt</a>
 It uses the grunt Backbone Boilerplate which I really recommand and supports:
 
 GRUNT, basic tasks:
@@ -140,7 +158,8 @@ GRUNT, basic tasks:
 * test - Run unit tests with nodeunit.
 * watch - Run predefined tasks whenever watched files change.
 
-grunt-contrib, tasks:
+### <a name="grunt_contrib">Grunt-Contrib</a>
+
 [`clean`](/gruntjs/grunt-contrib/blob/master/docs/clean.md) - Clear files and folders.
 
 [`coffee`](/gruntjs/grunt-contrib/blob/master/docs/coffee.md) - Compile CoffeeScript files into JavaScript.
@@ -162,23 +181,8 @@ grunt-contrib, tasks:
 [`stylus`](/gruntjs/grunt-contrib/blob/master/docs/stylus.md) - Compile Stylus files into CSS.
 
 
-## Documentation of backbone boilerplate ##
 
-View the Backbone Boilerplate documentation here:
-
-[GitHub Wiki](https://github.com/tbranyen/backbone-boilerplate/wiki)
-
-### How to built the project, precompile handlebars.js files and concat files 
-
-To use the new and improved build process, please visit the 
-[grunt-bbb](https://github.com/backbone-boilerplate/grunt-bbb)
-plugin repo and follow the instructions to install.  Basing your project off
-this repo will allow the `bbb` commands to work out-of-the-box.
-
-
-## Deeper explanation of the code
-
-### jquery mobile init properties
+### <a name="settings">Additional Settings</a>
 
 To support right behavior in e.g. navigation and use default backbone.js routing, use the following properties:
 
@@ -209,13 +213,23 @@ var iosDevice = ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.
   });
 ```
 
-#### Backbone settings
+
 Backbone.history.start({ pushState: false });
 is used to work properly with forward/back buttons
 
 
+### <a name="todo">TODO</a>
 
-##### References and similar projects
+* Make an Addy Osmani TodoMVC application out of it.
+* Extend documentation
+* Write a chapter in Addy Osmani Backbone fundamentals about this project
+* Introduce handlebars task like described here : https://github.com/cowboy/grunt/issues/225
+* Cleanup require.js dependency management and add view examples. 
+* * Add tests ( jasmine + sinon.js + + phantom.js ? + continous integration  with jstestdriver and jenkins)
+* Make a mobile + desktop app out of it, using common coed
+
+
+##### <a name="references">References and similar projects</a>
 
 - https://github.com/Filirom1/jquery-mobile-backbone-requirejs
 
