@@ -1,12 +1,12 @@
 define([
     'lodash',
     'backbone'
-], function( _, Backbone ) {
+], function (_, Backbone) {
 
     var TodoModel = Backbone.Model.extend({
-        defaults: {
-            title: '',
-            completed: false
+        defaults:{
+            title:'',
+            completed:false
         },
         settings:{
             validation:{
@@ -19,9 +19,9 @@ define([
                 }
             }
         },
-        toggle: function() {
+        toggle:function () {
             this.save({
-                completed: !this.get('completed')
+                completed:!this.get('completed')
             });
         }
     });

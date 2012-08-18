@@ -6,20 +6,20 @@ define([
     function (Backbone, Validateable) {
 
         var Basicdialog = Validateable.extend({
-            role:"dialog",
-            transparentBackgroundPageElID:undefined,
-            attributes:function () {
+            role : "dialog",
+            transparentBackgroundPageElID : undefined,
+            attributes : function () {
                 return {
-                    "data-role":this.role
-                }
+                    "data-role" : this.role
+                };
             },
-            render:function () {
+            render : function () {
                 if (this.transparentBackgroundPageElID) {
                     this.makeLastPageTransparent();
                 }
                 this._super("render", {});
             },
-            makeLastPageTransparent:function () {
+            makeLastPageTransparent : function () {
                 $transparentBackgroundPageEl = $("#" + this.transparentBackgroundPageElID);
                 if ($transparentBackgroundPageEl.css("display") !== "none") {
                     $transparentBackgroundPageEl.addClass("ui-dialog-background ");
@@ -27,7 +27,6 @@ define([
             }
 
         });
-
 
         return Basicdialog;
     });

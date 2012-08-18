@@ -1,15 +1,15 @@
 require.config({
     deps:["main"],
-
+    //dir: "../app-build",
     paths:{
         // JavaScript folders
         libs:"../assets/js/libs",
         plugins:"../assets/js/plugins",
 
-        // Libraries
-        jquery:"../assets/js/libs/jquery",
+        //Uncompressed Libraries
+        jquery:"../assets/js/libs/jquery", // 1.8.0
         'jquerymobile.config':'jquerymobile.config',
-        jquerymobile:"../assets/js/libs/jquerymobile",
+        jquerymobile:"../assets/js/libs/jquerymobile", // 1.2.0.Alpha1 with default template
         jqueryvalidation:"../assets/js/libs/jquery.validation",
         lodash:"../assets/js/libs/lodash",
         underscore:"../assets/js/libs/underscore",
@@ -43,7 +43,6 @@ require.config({
         },
         jqueryvalidation:{
             deps:["jquery"]
-//    	exports: "jqueryvalidation"
         }
     }
 });

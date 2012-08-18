@@ -129,17 +129,16 @@ module.exports = function (grunt) {
         // This task uses James Burke's excellent r.js AMD build tool.  In the
         // future other builders may be contributed as drop-in alternatives.
         requirejs:{
-            // Include the main configuration file
-            mainConfigFile:"app/config.js",
-
-            // Output file
-            out:"dist/debug/require.js",
-
-            // Root application module
-            name:"config",
-
-            // Do not wrap everything in an IIFE
-            wrap:false
+            compile: {
+                options: {
+                    baseUrl: "app/",
+                    mainConfigFile: "app/config.js",
+                    out: "dist/debug/require.js",
+                    name:"config",
+                    // Do not wrap everything in an IIFE
+                    wrap:false
+                }
+            }
         },
 
         // The headless QUnit testing environment is provided for "free" by Grunt.
