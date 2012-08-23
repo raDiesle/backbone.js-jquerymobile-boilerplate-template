@@ -18,14 +18,6 @@ It consists of:
 
 - code structure and super-classes for clean code and easy reuse
 
-
-#### Current State:
-Wait until monday, 20. August 2012
-
-where due to https://github.com/raDiesle/backbone.js-jquerymobile-boilerplate-template/issues/1
-handlebars.js partials are not working properly with the grunt handlebars plugin.
-
-
 #### Quick start
 
 * checkout from git with your favourite tool or cmd. For those who are new, I would recommand usage of Eclipse Git, Webstorm or Tortoise Git
@@ -137,11 +129,13 @@ To use it, you just have to override onSuccessfulValidation
 
 
 #### <a name="handlebars">Registering handlebars.js templates</a>
-To use handlebars.js templates and partials you have to register them first.
 
-The findAndRegisterPartials will do this job for all handlebars.js templates.
+Files ending with .template will be precompiled and registered as handlebars templates.
+Files endling with .partial will be precompiled and registered as handlebars partials.
 
-It is currently done in [`main.js`](app/main.js)
+To debug handlebar errors, check the precompiled file or the console output in firefox, 
+which was written by the {{whatis }} handlebars helper.
+
 
 
 
