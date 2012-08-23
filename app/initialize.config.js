@@ -2,7 +2,7 @@ define(['jquery', 'handlebars'], function ($, Handlebars) {
     var settings = {};
     settings.init = function () {
         Handlebars.templates = window.JST;
-        Handlebars.partials = Handlebars.templates;
+//        Handlebars.partials = Handlebars.templates;
 
         // All navigation that is relative should be passed through the navigate
         // method, to be processed by the router. If the link has a `data-bypass`

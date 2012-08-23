@@ -22,7 +22,7 @@ define([
                 return this.getSpecificTemplateValues().headerTitle;
             },
             getTemplateID : function () {
-                return "template_basic_page_simple";
+                return "basic_page_simple";
             },
             getTemplateResult : function (templateDefinitionID, templateValues) {
                 return window.JST[templateDefinitionID](templateValues);

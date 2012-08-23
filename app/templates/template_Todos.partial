@@ -1,0 +1,4 @@
+    {{> welcome}}
+    {{calculation}}
+    <p>go to second page <a href="#pages/second" data-ajax="false">Go to second page</a></p>
+    <a href="#openDialog" data-role="button" data-ajax="false">open dialog</a>
