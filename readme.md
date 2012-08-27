@@ -1,5 +1,5 @@
 Backbone and jquerymobile JQM Boilerplate code
-==============================================
+===============================================
 
 This project provides a bulletproof template + build process to develop
 an application by using jQuery mobile and backbone.js
