@@ -18,15 +18,19 @@ It consists of:
 
 - code structure and super-classes for clean code and easy reuse
 
-
-#### Current State:
-Wait until monday, 20. August 2012
-
-where due to https://github.com/raDiesle/backbone.js-jquerymobile-boilerplate-template/issues/1
-handlebars.js partials are not working properly with the grunt handlebars plugin.
+### Table of contents
+* [General](#general)
+* [Basic classes](#basicclasses) : [Basic View](#basicclasses_basicview) [Basic Dialog] (#basicclasses_basicdialog) [Validateable](#basisclasses_validateable)
+* [Handlebars](#handlebars)
+* [Grunt](#grunt)
+* [Grunt-contrib](#grunt_contrib)
+* [Settings](#settings)
+* [Todo](#todo)
+* [References](#references)
 
 
 #### Quick start
+
 
 * checkout from git with your favourite tool or cmd. For those who are new, I would recommand usage of Eclipse Git, Webstorm or Tortoise Git
 * open your command line tool
@@ -35,25 +39,12 @@ handlebars.js partials are not working properly with the grunt handlebars plugin
 * npm install -g grunt            ( installs grunt command line tool)
 * npm install -g bbb              ( is a grunt addon, which offers backbone templates and task collections like grunt-contrib)
 * npm install grunt-contrib       ( needed to install not global, because you'll need the newest version)
+
 * bbb handlebars                  ( precompiles templates to javascript functions)
 * bbb server                      ( runs server on your local machine in development mode)
 * go to http://localhost:8000
 * Before you start developing, enable the handlebars task, if any change is done on a file by running once:
-  bbb watch
-
-
-### Table of contents
-* [General](#general)
-* [Basic classes](#basicclasses) : [Basic View](#basicclasses_basicview) [Basic Dialog (#basicclasses_basicdialog) [Validateable](#basisclasses_validateable)
-* [Handlebars](#handlebars)
-* [Grunt](#grunt)
-* [Grunt-contrib](#grunt_contrib)
-* [Settings](#settings)
-* [Todo/future plans](#todo)
-* [References/cooperation](#references)
-
-
-
+  bbb watch or run bbb handlebars every time manually
 
 
 ###<a name="general">General</a>
@@ -221,11 +212,13 @@ is used to work properly with forward/back buttons
 ### <a name="todo">TODO</a>
 
 * Make an Addy Osmani TodoMVC application out of it.
+* Implement good back button functionality e.g. for dialog
+* add subview support with jQuery Mobile and backbone
 * Extend documentation
 * Write a chapter in Addy Osmani Backbone fundamentals about this project
 * Introduce handlebars task like described here : https://github.com/cowboy/grunt/issues/225
 * Cleanup require.js dependency management and add view examples. 
-* * Add tests ( jasmine + sinon.js + + phantom.js ? + continous integration  with jstestdriver and jenkins)
+* Add tests ( jasmine + sinon.js + + phantom.js ? + continous integration  with jstestdriver and jenkins)
 * Make a mobile + desktop app out of it, using common coed
 
 

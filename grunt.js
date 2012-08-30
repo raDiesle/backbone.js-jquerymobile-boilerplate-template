@@ -1,15 +1,7 @@
-// This is the main application configuration file.  It is a Grunt
-// configuration file, which you can learn more about here:
-// https://github.com/cowboy/grunt/blob/master/docs/configuring.md
-//
 module.exports = function (grunt) {
 
     grunt.initConfig({
-
-            // The clean task ensures all files are removed from the dist/ directory so
-            // that no files linger from previous builds.
             clean : ["dist/"],
-
             // The lint task will run the build configuration and the application
             // JavaScript through JSHint and report any errors.  You can change the
             // options for this task, by reading this:
@@ -38,11 +30,10 @@ module.exports = function (grunt) {
                         processPartialName : function (filePath) { // input:  templates/_header.handlebar
                             return grunt.helper("getSimpleFileName", filePath);
                         },
-                        partialRegex : /\.partial$/
+                        partialRegex : /\.template_partial$/
                     },
                     files : {
-                        "dist/debug/handlebars_packaged.js" : 'app/templates/**/*'
-//                    ,"dist/debug/handlebars_packaged.js" : 'app/templates/**/*.partial'
+                        "dist/debug/handlebars_packaged.js" : 'app/templates/**/*.template*'
                     }
                 }
             },
@@ -132,8 +123,7 @@ module.exports = function (grunt) {
             }
 
         }
-    )
-    ;
+    );
 
     grunt.registerHelper('getSimpleFileName', function (fullFilePath) {
         var fileName = fullFilePath.substring(fullFilePath.lastIndexOf('/') + 1);

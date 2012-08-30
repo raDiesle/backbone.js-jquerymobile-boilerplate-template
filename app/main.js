@@ -17,29 +17,28 @@ require([
     function ($, jqueryUnused, Backbone, bbsuperUnused, _, Handlebars, initializeSettings, handlebarscompUnused, jqmUnused, Todos, ExamplePage2, ExamplePage3, ExampleDialog) {
         initializeSettings.init();
 
-
         var Router = Backbone.Router.extend({
-            routes:{
-                "":"index",
-                "openDialog":"openDialog",
-                'pages/second':'secondPage',
-                'pages/third':'thirdPage'
+            routes : {
+                "" : "index",
+                "openDialog" : "openDialog",
+                'pages/second' : 'secondPage',
+                'pages/third' : 'thirdPage'
             },
 
-            index:function () {
+            index : function () {
                 new Todos();
             },
-            openDialog:function () {
+            openDialog : function () {
                 console.debug("dialog was requested");
 
                 var myModel = Backbone.Model.extend({
-                    settings:{
-                        validation:{
-                            rules:{
-                                password:{
-                                    "required":true,
-                                    "digits":true,
-                                    "min":6
+                    settings : {
+                        validation : {
+                            rules : {
+                                password : {
+                                    "required" : true,
+                                    "digits" : true,
+                                    "min" : 6
                                 }
                             }
                         }
@@ -48,19 +47,19 @@ require([
 
                 var modelInstance = new myModel();
 
-                new ExampleDialog({model:modelInstance});
+                new ExampleDialog({model : modelInstance});
             },
-            secondPage:function () {
+            secondPage : function () {
                 console.debug("second page openened");
                 new ExamplePage2();
             },
-            thirdPage:function () {
+            thirdPage : function () {
                 new ExamplePage3();
             }
         });
 
         $(function () {
             new Router();
-            Backbone.history.start({ pushState:false });
+            Backbone.history.start({ pushState : false });
         });
     });
