@@ -1,5 +1,5 @@
 define([
-    "underscore",
+    "lodash",
     "backbone",
     "handlebars",
     "handlebars_helpers"
@@ -28,7 +28,7 @@ define([
                 return window.JST[templateDefinitionID](templateValues);
             },
             getBasicPageTemplateResult : function () {
-                var templateValues = {templatePartialPageID : "template_" + this.id, headerTitle : this.getHeaderTitle()};
+                var templateValues = {templatePartialPageID : this.id, headerTitle : this.getHeaderTitle()};
                 var specific = this.getSpecificTemplateValues();
 
                 $.extend(templateValues, this.getSpecificTemplateValues());

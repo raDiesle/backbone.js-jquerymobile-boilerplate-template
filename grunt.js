@@ -37,10 +37,9 @@ module.exports = function (grunt) {
                     }
                 }
             },
-
             watch : {
-                files : ['app/templates/**/*.template'], // 'app/**/*.less',
-                tasks : 'handlebars concat'
+                files : ['app/templates/**/*.template*'], // 'app/**/*.less',
+                tasks : 'handlebars'
             },
 
             // The concatenate task is used here to merge the almond require/define

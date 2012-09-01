@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f66805b-3eff-4ebb-894b-6313690b0386" name="Default" comment=" fix with broken commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/david.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLinters/jslint.xml" />
-      <change type="DELETED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\modules\routers\router.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\template_Todos.partial" afterPath="$PROJECT_DIR$/app/templates/template_Todos.template_partial" />
-      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\template_example_dialog.partial" afterPath="$PROJECT_DIR$/app/templates/template_example_dialog.template_partial" />
-      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\template_example_page_2.partial" afterPath="$PROJECT_DIR$/app/templates/template_example_page_2.template_partial" />
-      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\template_example_page_3.partial" afterPath="$PROJECT_DIR$/app/templates/template_example_page_3.template_partial" />
-      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\welcome.partial" afterPath="$PROJECT_DIR$/app/templates/welcome.template_partial" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/backbone.js-jquerymobile-boilerplate-template.iml" afterPath="$PROJECT_DIR$/.idea/backbone.js-jquerymobile-boilerplate-template.iml" />
+    <list default="true" id="5f66805b-3eff-4ebb-894b-6313690b0386" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/TodoModel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/TodosCollection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/view/SingleTodoView.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/view/TodosView.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/Todos.template_partial" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/singleTodo_VIEW_mode.template" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/stats.template_partial" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/css/base.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/libs/localstorage.js" />
+      <change type="DELETED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\modules\models\todo.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\modules\view\Todos.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\template_Todos.template_partial" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\basic\basic_page_simple.template" afterPath="$PROJECT_DIR$/app/templates/abstract/basic_page_simple.template" />
+      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\template_example_dialog.template_partial" afterPath="$PROJECT_DIR$/app/templates/example_dialog.template_partial" />
+      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\template_example_page_2.template_partial" afterPath="$PROJECT_DIR$/app/templates/example_page_2.template_partial" />
+      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates\template_example_page_3.template_partial" afterPath="$PROJECT_DIR$/app/templates/example_page_3.template_partial" />
+      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\assets\images\ajax-loader.gif" afterPath="$PROJECT_DIR$/assets/css/images/ajax-loader.gif" />
+      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\assets\images\icons-18-black.png" afterPath="$PROJECT_DIR$/assets/css/images/icons-18-black.png" />
+      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\assets\images\icons-18-white.png" afterPath="$PROJECT_DIR$/assets/css/images/icons-18-white.png" />
+      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\assets\images\icons-36-black.png" afterPath="$PROJECT_DIR$/assets/css/images/icons-36-black.png" />
+      <change type="MOVED" beforePath="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\assets\images\icons-36-white.png" afterPath="$PROJECT_DIR$/assets/css/images/icons-36-white.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config.js" afterPath="$PROJECT_DIR$/app/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/handlebars_helpers.js" afterPath="$PROJECT_DIR$/app/handlebars_helpers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/jquerymobile.config.js" afterPath="$PROJECT_DIR$/app/jquerymobile.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main.js" afterPath="$PROJECT_DIR$/app/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/modules/view/abstract/BasicView.js" afterPath="$PROJECT_DIR$/app/modules/view/abstract/BasicView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/welcome.template_partial" afterPath="$PROJECT_DIR$/app/templates/welcome.template_partial" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/index.css" afterPath="$PROJECT_DIR$/assets/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grunt.js" afterPath="$PROJECT_DIR$/grunt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="backbone.js-jquerymobile-boilerplate-template.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,94 +55,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="grunt.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grunt.js">
+      <file leaf-file-name="SingleTodoView.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/modules/view/SingleTodoView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="23" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0">
+            <state line="36" column="14" selection-start="1301" selection-end="1301" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handlebars_helpers.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/handlebars_helpers.js">
+      <file leaf-file-name="TodosView.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/modules/view/TodosView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="75" column="75" selection-start="2614" selection-end="2614" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="initialize.config.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/initialize.config.js">
+      <file leaf-file-name="singleTodo_VIEW_mode.template" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/singleTodo_VIEW_mode.template">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
+            <state line="9" column="11" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/main.js">
+      <file leaf-file-name="Todos.template_partial" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/Todos.template_partial">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
+            <state line="6" column="37" selection-start="133" selection-end="133" vertical-scroll-proportion="0.10793651">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readme.md">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
+      <file leaf-file-name="welcome.template_partial" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/welcome.template_partial">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="13" selection-start="1604" selection-end="1604" vertical-scroll-proportion="-23.8">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handlebars_packaged.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/debug/handlebars_packaged.js">
+      <file leaf-file-name="example_page_3.template_partial" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/example_page_3.template_partial">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="26" selection-start="564" selection-end="564" vertical-scroll-proportion="-0.1710731">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".name" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/.name">
+      <file leaf-file-name="example_dialog.template_partial" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/example_dialog.template_partial">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="6" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="-3.9230769">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="misc.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <file leaf-file-name="stats.template_partial" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/stats.template_partial">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="64" selection-start="64" selection-end="64" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scope_settings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/scopes/scope_settings.xml">
+      <file leaf-file-name="BasicView.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/modules/view/abstract/BasicView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="19" selection-start="3527" selection-end="3527" vertical-scroll-proportion="-19.04">
+            <state line="34" column="45" selection-start="1242" selection-end="1259" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -172,22 +175,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/modules/view/ExamplePage2.js" />
-        <option value="$PROJECT_DIR$/app/modules/view/ExampleDialog.js" />
-        <option value="$PROJECT_DIR$/app/modules/view/abstract/Validateable.js" />
-        <option value="$PROJECT_DIR$/app/modules/view/abstract/BasicDialog.js" />
-        <option value="$PROJECT_DIR$/app/config.js" />
-        <option value="$PROJECT_DIR$/node_modules/grunt-contrib/tasks/handlebars.js" />
-        <option value="$PROJECT_DIR$/app/templates/template_Todos.handlebars" />
-        <option value="$PROJECT_DIR$/app/initialize.config.js" />
-        <option value="$PROJECT_DIR$/app/templates/basic/template_basic_page_simple.handlebars" />
+        <option value="$PROJECT_DIR$/app/templates/abstract/basic_page_simple.template" />
         <option value="$PROJECT_DIR$/app/modules/view/abstract/BasicView.js" />
-        <option value="$PROJECT_DIR$/dist/debug/handlebars_packaged.js" />
-        <option value="$PROJECT_DIR$/grunt.js" />
-        <option value="$PROJECT_DIR$/app/modules/routers/router.js" />
+        <option value="$PROJECT_DIR$/app/common.js" />
+        <option value="$PROJECT_DIR$/app/config.js" />
+        <option value="$PROJECT_DIR$/assets/js/libs/localstorage.js" />
+        <option value="$PROJECT_DIR$/app/modules/TodosCollection.js" />
+        <option value="$PROJECT_DIR$/assets/js/libs/backbone.js" />
         <option value="$PROJECT_DIR$/app/main.js" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/app/templates/stats.template_partial" />
+        <option value="$PROJECT_DIR$/app/handlebars_helpers.js" />
+        <option value="$PROJECT_DIR$/app/modules/TodoModel.js" />
+        <option value="$PROJECT_DIR$/app/modules/view/TodosView.js" />
+        <option value="$PROJECT_DIR$/app/templates/singleTodo_VIEW_mode.template" />
+        <option value="$PROJECT_DIR$/app/modules/view/SingleTodoView.js" />
+        <option value="$PROJECT_DIR$/app/templates/welcome.template_partial" />
+        <option value="$PROJECT_DIR$/app/templates/Todos.template_partial" />
       </list>
     </option>
   </component>
@@ -223,40 +226,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Default">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Changed Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="merge issue">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,6 +276,222 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="abstract" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbone.js-jquerymobile-boilerplate-template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="abstract" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Default">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Changed Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="merge issue">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -334,7 +519,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="editing.templates" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
@@ -348,6 +533,8 @@
       <recent name="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\assets\js\libs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\assets\css" />
+      <recent name="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\modules" />
       <recent name="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\modules\routers" />
       <recent name="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app" />
       <recent name="C:\Users\david\My Documents\Aptana_workspace\backbone.js-jquerymobile-boilerplate-template\app\templates" />
@@ -416,7 +603,11 @@
       <created>1346349789118</created>
       <updated>1346349789118</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changed handlebar template convention naming. removed unused router">
+      <created>1346350505857</created>
+      <updated>1346350505857</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -443,21 +634,22 @@
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2693727" sideWeight="0.67027557" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2693727" sideWeight="0.6555118" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2693727" sideWeight="0.3375984" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996063" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -501,7 +693,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed handlebar template convention naming. removed unused router" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -519,102 +711,113 @@
     <MESSAGE value="Updated to current grunt-contrib version and changed template post/prefixes" />
     <MESSAGE value=" fix with broken commit" />
     <MESSAGE value="merge issue" />
+    <MESSAGE value="changed handlebar template convention naming. removed unused router" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/templates/template_example_dialog.template_partial">
+    <entry file="file://$PROJECT_DIR$/app/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="47" column="15" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/template_Todos.template_partial">
+    <entry file="file://$PROJECT_DIR$/app/modules/view/abstract/Validateable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0" />
+        <state line="13" column="42" selection-start="343" selection-end="372" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/basic/basic_page_simple.template">
+    <entry file="file://$PROJECT_DIR$/assets/js/libs/backbone.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="38" selection-start="170" selection-end="191" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/modules/view/abstract/BasicView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="48" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" />
+        <state line="39" column="0" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/handlebars_helpers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="18" column="28" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/initialize.config.js">
+    <entry file="file://$PROJECT_DIR$/app/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0" />
+        <state line="37" column="20" selection-start="1278" selection-end="1290" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/main.js">
+    <entry file="file://$PROJECT_DIR$/app/modules/TodoModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0" />
+        <state line="8" column="21" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/.name">
+    <entry file="file://$PROJECT_DIR$/app/modules/view/TodosView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="75" selection-start="2614" selection-end="2614" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/view/abstract/BasicView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="45" selection-start="1242" selection-end="1259" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/stats.template_partial">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="64" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/example_page_3.template_partial">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+    <entry file="file://$PROJECT_DIR$/app/templates/example_dialog.template_partial">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="-3.9230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/view/SingleTodoView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="14" selection-start="1301" selection-end="1301" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/singleTodo_VIEW_mode.template">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="11" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/welcome.template_partial">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/scopes/scope_settings.xml">
+    <entry file="file://$PROJECT_DIR$/app/templates/Todos.template_partial">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="19" selection-start="3527" selection-end="3527" vertical-scroll-proportion="-19.04">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grunt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="23" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="1604" selection-end="1604" vertical-scroll-proportion="-23.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/debug/handlebars_packaged.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="564" selection-end="564" vertical-scroll-proportion="-0.1710731">
+        <state line="6" column="37" selection-start="133" selection-end="133" vertical-scroll-proportion="0.10793651">
           <folding />
         </state>
       </provider>

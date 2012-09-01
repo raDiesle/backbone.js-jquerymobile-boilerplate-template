@@ -1,6 +1,5 @@
 @import "h5bp.css";
 
-
 label.error {
     color: red;
     font-size: 16px;
@@ -11,24 +10,54 @@ label.error {
     float: none;
 }
 
-@media screen and (orientation: portrait){
-    label.error { margin-left: 0; display: block; }
+@media screen and (orientation: portrait) {
+    label.error {
+        margin-left: 0;
+        display: block;
+    }
 }
 
-@media screen and (orientation: landscape){
-    label.error { display: inline-block; margin-left: 22%; }
+@media screen and (orientation: landscape) {
+    label.error {
+        display: inline-block;
+        margin-left: 22%;
+    }
 }
 
-
-.transparent{
-	background-color: orange;
-	zoom: 1;
-	filter: alpha(opacity=50);
-	opacity: 0.5;
+.transparent {
+    background-color: orange;
+    zoom: 1;
+    filter: alpha(opacity = 50);
+    opacity: 0.5;
 }
 
 .ui-dialog-background {
-	opacity: 0.5;
-	display: block !important;
-	-webkit-transition: opacity 0.5s ease-in;
+    opacity: 0.5;
+    display: block !important;
+    -webkit-transition: opacity 0.5s ease-in;
+}
+
+#todo-list li label {
+    margin-left: 0;
+
+/*
+ word-break: break-word;
+ padding: 15px;
+ display: block;
+ line-height: 1.2;
+*/
+}
+
+
+.ui-slider{
+    display:inline;
+}
+
+input.ui-input-text{
+    display:inline;
+    width:60%;
+}
+
+#todo-list li label{
+    display:inline;
 }

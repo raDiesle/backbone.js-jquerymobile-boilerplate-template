@@ -9,5 +9,7 @@ define(['jquery'], function ($) {
         $.mobile.defaultPageTransition = "slidedown";
         $.mobile.page.prototype.options.degradeInputs.date = true;
         $.mobile.page.prototype.options.domCache = false;
+
+        $.mobile.ignoreContentEnabled=true;
     });
 });

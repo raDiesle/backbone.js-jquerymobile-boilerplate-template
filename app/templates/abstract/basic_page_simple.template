@@ -3,7 +3,7 @@
         <a href="#" data-icon="delete">Close</a>
     </div>
     <div data-role="content">
-
+        {{whatis "Template page trying to load:"}}
         {{whatis templatePartialPageID}}
         {{> templatePartialPageID}}
     </div>

@@ -3,18 +3,18 @@ require([
     "jqueryvalidation",
     "backbone",
     "backbone_super",
-    "underscore",
+    "lodash",
     "handlebars",
     "initialize.config",
     "handlebars.compiled",
     "jquerymobile",
-    "modules/view/Todos",
+    "modules/view/TodosView",
     "modules/view/ExamplePage2",
-    "modules/view/ExamplePage3",
-    "modules/view/ExampleDialog"
+    "modules/view/ExamplePage3"
+    //,"modules/view/ExampleDialog"
 ],
 //    jqValidationUnused
-    function ($, jqueryUnused, Backbone, bbsuperUnused, _, Handlebars, initializeSettings, handlebarscompUnused, jqmUnused, Todos, ExamplePage2, ExamplePage3, ExampleDialog) {
+    function ($, jqueryUnused, Backbone, bbsuperUnused, _, Handlebars, initializeSettings, handlebarscompUnused, jqmUnused, TodosView, ExamplePage2, ExamplePage3) {// , ExampleDialog
         initializeSettings.init();
 
         var Router = Backbone.Router.extend({
@@ -26,7 +26,7 @@ require([
             },
 
             index : function () {
-                new Todos();
+                new TodosView();
             },
             openDialog : function () {
                 console.debug("dialog was requested");
@@ -45,9 +45,9 @@ require([
                     }
                 });
 
-                var modelInstance = new myModel();
+             //   var modelInstance = new myModel();
 
-                new ExampleDialog({model : modelInstance});
+            //    new ExampleDialog({model : modelInstance});
             },
             secondPage : function () {
                 console.debug("second page openened");

@@ -1,0 +1,11 @@
+<select name="completed" class="toggle" data-role="slider">
+{{whatis this}}
+    <option value="off" {{#if completed}}selected="selected"{{/if}}>Off</option>
+    <option value="on" {{#if completed}}selected="selected"{{/if}}>On</option>
+</select>
+<label name="todo_description">{{title}}</label>
+
+<span class="edit">
+    <a href="index.html" data-role="button" data-icon="check" data-mini="true" data-inline="true">Save</a>
+    <input name="edit_title" type="text" value="{{title}}" />
+</span>
