@@ -35,6 +35,9 @@ define([
                 this.input = this.$('#new-todo');
                 this.allCheckbox = this.$('#toggle-all')[0];
                 this.$footer = this.$('#footer');
+                var currentFooterHTML = Handlebars.partials['todosStatisticsAndBulkFooter'](this.getSpecificTemplateValues());
+                this.$('#footer').html(currentFooterHTML).trigger("create");
+
                 this.$main = this.$('#main');
 
                 var completed = TodosCollection.completed().length;

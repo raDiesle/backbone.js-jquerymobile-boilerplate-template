@@ -12,7 +12,7 @@ define([
             tagName : 'li',
             template : window.JST['singleTodo'],
             events : {
-                'change .toggle' : 'togglecompleted',
+                'change .toggle' : 'toggleCompleted',
                 'click label' : 'edit',
                 'click .destroy' : 'clear',
                 'keypress .edit' : 'updateOnEnter',
@@ -50,7 +50,7 @@ define([
                         || (isCompleted && Common.TodoFilter === 'active')
                     );
             },
-            togglecompleted : function () {
+            toggleCompleted : function () {
                 this.model.toggle();
                 this.$el.toggleClass('completed', 'completed');
             },
