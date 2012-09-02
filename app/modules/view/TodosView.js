@@ -7,45 +7,39 @@ define([
     "modules/view/SingleTodoView",
     "common"
 ],
-    function (Backbone, $, _, BasicView, Todos, SingleTodoView, Common) {
+    function (Backbone, $, _, BasicView, TodosCollection, SingleTodoView, Common) {
         var TodosView = BasicView.extend({
             id : "Todos",
-            //collection : new TodosCollection(
-            /*        {title : "wash dishes", isCompleted : true, id : 0},
-             {title : "Do homework", isCompleted : false, id : 1}
-             ]*/
-            //),
+
             initialize : function () {
-                this._super("render", {});
+                TodosCollection.on('add', this.addOne, this);
 
-                Todos.on('add', this.addOne, this);
-                Todos.on('reset', this.addAll, this);
-                Todos.on('change:completed', this.filterOne, this);
-                Todos.on("filter", this.filterAll, this);
-                Todos.on('all', this.render, this);
-
-                Todos.fetch();
-
-
+                TodosCollection.on('reset', this.addAllTodos, this);
+                TodosCollection.on('change:completed', this.filterOne, this);
+                TodosCollection.on("filter", this.filterAll, this);
+                TodosCollection.on('all', this.render, this);
+                TodosCollection.fetch();
             },
             getSpecificTemplateValues : function () {
                 return {
-                    'completed' : Todos.completed().length,
-                    'remaining' : Todos.remaining().length
-                    //todos : this.collection.toJSON()
+                    'completed' : TodosCollection.completed().length,
+                    'remaining' : TodosCollection.remaining().length,
+                    'isAnyOrOneRemaining' : TodosCollection.remaining().length > 1,
+                    'isAnyCompleted' : TodosCollection.completed().length > 0
+                    //TodosCollection : this.collection.toJSON()
                 };
             },
             render : function () {
-
-
                 this.input = this.$('#new-todo');
                 this.allCheckbox = this.$('#toggle-all')[0];
                 this.$footer = this.$('#footer');
                 this.$main = this.$('#main');
 
 
+                var completed = TodosCollection.completed().length;
+                var remaining = TodosCollection.remaining().length;
 
-              //  if (Todos.length) {
+                if (TodosCollection.length) {
                     this.$main.show();
                     this.$footer.show();
 
@@ -55,31 +49,36 @@ define([
                         .removeClass('selected')
                         .filter('[href="#/' + ( Common.TodoFilter || '' ) + '"]')
                         .addClass('selected');
-               /* } else {
+                } else {
                     this.$main.hide();
                     this.$footer.hide();
-                }*/
+                }
 
-                //this.allCheckbox.checked = !remaining;
+                this.allCheckbox.checked = !remaining;
 
             },
+
+            // Add a single todo item to the list by creating a view for it, and
+            // appending its element to the `<ul>`.
+
+            // Add all items in the **TodosCollection** collection at once.
+
+            // Generate the attributes for a new Todo item.
+            //),
             events : {
                 'keypress #new-todo' : 'createOnEnter',
                 'click #clear-completed' : 'clearCompleted',
                 'click #toggle-all' : 'toggleAllComplete'
                 // "change select" : "toggleCompleted"
             },
-            // Add a single todo item to the list by creating a view for it, and
-            // appending its element to the `<ul>`.
             addOne : function (todo) {
                 var view = new SingleTodoView({ model : todo });
                 $('#todo-list').append(view.render().el).trigger("create");
             },
-
-            // Add all items in the **Todos** collection at once.
-            addAll : function () {
+            addAllTodos : function () {
+                this._super("render", {});
                 this.$('#todo-list').html('');
-                Todos.each(this.addOne, this);
+                TodosCollection.each(this.addOne, this);
 
             },
 
@@ -88,14 +87,13 @@ define([
             },
 
             filterAll : function () {
-                app.Todos.each(this.filterOne, this);
+                //app.TodosCollection.each(this.filterOne, this);
+                TodosCollection.each(this.filterOne, this);
             },
-
-            // Generate the attributes for a new Todo item.
             newAttributes : function () {
                 return {
                     title : this.input.val().trim(),
-                    order : Todos.nextOrder(),
+                    order : TodosCollection.nextOrder(),
                     completed : false
                 };
             },
@@ -107,13 +105,13 @@ define([
                     return;
                 }
 
-                Todos.create(this.newAttributes());
+                TodosCollection.create(this.newAttributes());
                 this.input.val('');
             },
 
             // Clear all completed todo items, destroying their models.
             clearCompleted : function () {
-                _.each(Todos.completed(), function (todo) {
+                _.each(TodosCollection.completed(), function (todo) {
                     todo.destroy();
                 });
 
@@ -123,7 +121,7 @@ define([
             toggleAllComplete : function () {
                 var completed = this.allCheckbox.checked;
 
-                Todos.each(function (todo) {
+                TodosCollection.each(function (todo) {
                     todo.save({
                         'completed' : completed
                     });

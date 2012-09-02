@@ -16,7 +16,7 @@ define(['handlebars'], function (Handlebars) {
 
         Handlebars.registerHelper('ifequal', function (val1, val2, fn, elseFn) {
             if (val1 === val2) {
-                return fn.fn();
+                return fn();
             }
             else if (elseFn) {
                 return elseFn();

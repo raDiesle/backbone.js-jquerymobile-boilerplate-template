@@ -9,24 +9,34 @@ require([
     "handlebars.compiled",
     "jquerymobile",
     "modules/view/TodosView",
+    "modules/TodosCollection",
+    "common",
     "modules/view/ExamplePage2",
     "modules/view/ExamplePage3"
     //,"modules/view/ExampleDialog"
 ],
 //    jqValidationUnused
-    function ($, jqueryUnused, Backbone, bbsuperUnused, _, Handlebars, initializeSettings, handlebarscompUnused, jqmUnused, TodosView, ExamplePage2, ExamplePage3) {// , ExampleDialog
+    function ($, jqueryUnused, Backbone, bbsuperUnused, _, Handlebars, initializeSettings, handlebarscompUnused, jqmUnused, TodosView, TodosCollection, Common, ExamplePage2, ExamplePage3) {// , ExampleDialog
         initializeSettings.init();
 
         var Router = Backbone.Router.extend({
             routes : {
                 "" : "index",
+                "todo" : "index",
+                "todo/:filter" : "filter",
                 "openDialog" : "openDialog",
                 'pages/second' : 'secondPage',
-                'pages/third' : 'thirdPage'
+                'pages/third' : 'thirdPage',
+                '*path' : 'index'
             },
 
             index : function () {
                 new TodosView();
+            },
+            filter : function (filter) {
+
+                Common.TodoFilter = filter.trim() === 'all' ? '' : filter.trim() || '';
+                TodosCollection.trigger('filter');
             },
             openDialog : function () {
                 console.debug("dialog was requested");
@@ -45,9 +55,9 @@ require([
                     }
                 });
 
-             //   var modelInstance = new myModel();
+                //   var modelInstance = new myModel();
 
-            //    new ExampleDialog({model : modelInstance});
+                //    new ExampleDialog({model : modelInstance});
             },
             secondPage : function () {
                 console.debug("second page openened");

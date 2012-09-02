@@ -10,7 +10,7 @@ define([
     function (Backbone, _, $, BasicView, TodoModel, Common, jquerymobile) {
         var singleTodoView = Backbone.View.extend({
             tagName : 'li',
-            template : window.JST['singleTodo_VIEW_mode'],
+            template : window.JST['singleTodo'],
             events : {
                 'change .toggle' : 'togglecompleted',
                 'dblclick label' : 'edit',

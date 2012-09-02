@@ -1,7 +1,7 @@
 <select name="completed" class="toggle" data-role="slider">
 {{whatis this}}
-    <option value="off" {{#if completed}}selected="selected"{{/if}}>Off</option>
-    <option value="on" {{#if completed}}selected="selected"{{/if}}>On</option>
+    <option value="Todo" {{#if completed}}selected="selected"{{/if}}>Todo</option>
+    <option value="Done" {{#if completed}}selected="selected"{{/if}}>Done</option>
 </select>
 <label name="todo_description">{{title}}</label>
 

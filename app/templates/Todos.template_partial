@@ -1,5 +1,3 @@
-    {{> welcome}}
-
     <section id="todoapp">
 
     		<header id="header">
