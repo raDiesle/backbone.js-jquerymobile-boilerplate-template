@@ -13,7 +13,7 @@ define([
             template : window.JST['singleTodo'],
             events : {
                 'change .toggle' : 'togglecompleted',
-                'dblclick label' : 'edit',
+                'click label' : 'edit',
                 'click .destroy' : 'clear',
                 'keypress .edit' : 'updateOnEnter',
                 'blur .edit' : 'close'
@@ -55,8 +55,9 @@ define([
                 this.$el.toggleClass('completed', 'completed');
             },
             edit : function () {
-                this.$el.addClass('editing');
-                this.input.focus();
+                window.location = "#editTodoTitle/"+this.model.cid;
+            /*    this.$el.addClass('editing');
+                this.input.focus();*/
             },
             close : function () {
                 var value = this.input.val().trim();

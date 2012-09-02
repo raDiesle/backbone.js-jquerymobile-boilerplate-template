@@ -12,11 +12,11 @@ require([
     "modules/TodosCollection",
     "common",
     "modules/view/ExamplePage2",
-    "modules/view/ExamplePage3"
-    //,"modules/view/ExampleDialog"
+    "modules/view/ExamplePage3",
+    "modules/view/EditTodoDialog"
 ],
 //    jqValidationUnused
-    function ($, jqueryUnused, Backbone, bbsuperUnused, _, Handlebars, initializeSettings, handlebarscompUnused, jqmUnused, TodosView, TodosCollection, Common, ExamplePage2, ExamplePage3) {// , ExampleDialog
+    function ($, jqueryUnused, Backbone, bbsuperUnused, _, Handlebars, initializeSettings, handlebarscompUnused, jqmUnused, TodosView, TodosCollection, Common, ExamplePage2, ExamplePage3, ExampleDialog) {
         initializeSettings.init();
 
         var Router = Backbone.Router.extend({
@@ -24,7 +24,7 @@ require([
                 "" : "index",
                 "todo" : "index",
                 "todo/:filter" : "filter",
-                "openDialog" : "openDialog",
+                "editTodoTitle/:id" : "openDialog",
                 'pages/second' : 'secondPage',
                 'pages/third' : 'thirdPage',
                 '*path' : 'index'
@@ -34,33 +34,13 @@ require([
                 new TodosView();
             },
             filter : function (filter) {
-
                 Common.TodoFilter = filter.trim() === 'all' ? '' : filter.trim() || '';
                 TodosCollection.trigger('filter');
             },
-            openDialog : function () {
-                console.debug("dialog was requested");
-
-                var myModel = Backbone.Model.extend({
-                    settings : {
-                        validation : {
-                            rules : {
-                                password : {
-                                    "required" : true,
-                                    "digits" : true,
-                                    "min" : 6
-                                }
-                            }
-                        }
-                    }
-                });
-
-                //   var modelInstance = new myModel();
-
-                //    new ExampleDialog({model : modelInstance});
+            openDialog : function (todoCID) {
+                new ExampleDialog({model : TodosCollection.getByCid(todoCID)});
             },
             secondPage : function () {
-                console.debug("second page openened");
                 new ExamplePage2();
             },
             thirdPage : function () {
