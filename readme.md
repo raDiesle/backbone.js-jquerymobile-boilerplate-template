@@ -31,15 +31,16 @@ It consists of:
 
 #### Quick start
 
-
-* checkout from git with your favourite tool or cmd. For those who are new, I would recommand usage of Eclipse Git, Webstorm or Tortoise Git
-* open your command line tool
+Preparations:
+* Checkout from git with your favourite tool or cmd. For those who are new, I would recommand usage of Eclipse Git, Webstorm or Tortoise Git
+* Open your command line tool
 * cd to the project folder "backbone.js-jquerymobile-boilerplate-template"
-* download and install [node.js](http://nodejs.org/) for your os system and run in your project folder:
+* Download and install [node.js](http://nodejs.org/) for your os system and run in your project folder:
 * npm install -g grunt            ( installs grunt command line tool)
 * npm install -g bbb              ( is a grunt addon, which offers backbone templates and task collections like grunt-contrib)
 * npm install grunt-contrib       ( needed to install not global, because you'll need the newest version)
 
+On development:
 * bbb handlebars                  ( precompiles templates to javascript functions)
 * bbb server                      ( runs server on your local machine in development mode)
 * go to http://localhost:8000
@@ -49,35 +50,21 @@ It consists of:
 
 ###<a name="general">General</a>
 
-With JQM I recommend to have your code as simple as possible by having a view per page 
-and do full rendering of handlebars.js or underscore templates.
 
-There are discussions about performance gain, if you only rerender parts in the DOM, which are needed.
-
-I disagree. With handlebars.js to render a page-template takes usually less than 3 ms.
-It's only one DOM-access to insert the generated HTML.
-
-With jquery mobile it's a good idea to have one template per page/view.
-template code can be reused by partials.
-
-So, by convention over configuration, template ids look like:
-"template_"+pageID
-where the JQM page will be automatically generated and inserted into the DOM.
-
-
-
-###<a name="basicclasses">Prepared classes for simple usage</a>
+###<a name="basicclasses">Abstract classes for simple usage</a>
 
 #### <a name="basicclasses_basicview">[`BasicView`](app/modules/BasicView.js)</a>
 
 ##### Use case:
-For any kind of new jquery mobile page
+For any jQuery mobile page view.
 
 ##### How to use:
 
 * getSpecificTemplateValues() is an abstract method. The json values are used for the handlebars.js context variables.
-* id is the pageID
-* to e.g. support transparent dialogs, the page will be removed from the DOM when the same page is requested again.
+* id is the pageID, which will automatically load the name of the template
+* if you want to use your own page template ( instead of "baisc_page_simple"),
+  override getTemplateID in your class
+
 
 ##### Examples:
 
@@ -90,20 +77,38 @@ ConcreteExampleView = BasicView.extend({
   	}
   });
 ```
-
+##### Additional information
+* to e.g. support transparent dialogs, the page will be removed from the DOM when the same page is requested again.
 
 #### <a name="basicclasses_basicdialog">[`BasicDialog`](app/modules/BasicDialog.js)</a>
 
 ##### Use case:
-It will render the page as dialog with or without validation
+It will render the page as dialog with or without validation.
+The previous page will be displayed transparent.
 
 ##### How to use
 
-*If you want to support transparent dialogs, like described here
-http://tqcblog.com/2012/04/19/transparent-jquery-mobile-dialogs/
-you have to define a transparentBackgroundPageElID
+- Define transparentBackgroundPageElID, which is the previous pageID
+- Define this.model.settings.validation.rules as validation rules. (see [jQuery.Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation/) for more information)
+- Override  onSuccessfulValidation : function(){}, which will be called,
+per default, if the form was submitted and validation is successful.
 
 
+
+```css
+.transparent {
+    background-color: orange;
+    zoom: 1;
+    filter: alpha(opacity = 50);
+    opacity: 0.5;
+}
+
+.ui-dialog-background {
+    opacity: 0.5;
+    display: block !important;
+    -webkit-transition: opacity 0.5s ease-in;
+}
+```
 
 ##### Examples
 
@@ -116,30 +121,70 @@ The validate rules are part of the model under this property
 this.model.settings.validation.rules
 
 ##### How to use
-By convention it expects an 
+- Define this.model.settings.validation.rules as validation rules. (see [jQuery.Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation/) for more information)
+- Override  onSuccessfulValidation : function(){}, which will be called,
+per default, if the form was submitted and validation is successful.
 
-a[type='submit']  and a  form
-
-and validation will be triggered by click on type submit
-
-To use it, you just have to override onSuccessfulValidation
+```css
+label.error {
+    color: red;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-top: 0.5em;
+    width: 100%;
+    float: none;
+}
+```
 
 ##### Examples
-
+define([
+    "backbone", "modules/view/abstract/BasicDialog"],
+    function (Backbone, BasicDialog) {
+        return BasicDialog.extend({
+            id : "editTodoDialog",
+            model : new Backbone.Model.extend({
+               settings : {
+                  validation : {
+                    rules : {
+                      title : {
+                        "required" : true,
+                        "min" : 5
+                    }
+                  }
+                }
+              },
+            }),
+            headerTitle : "Edit Todo",
+            transparentBackgroundPageElID : "Todos",
+            getSpecificTemplateValues : function () {
+                return this.model.toJSON();
+            },
+            onSuccessfulValidation : function () {
+                this.model.save({title : $("#edit_title", this.el).val()});
+                window.location = ""; // route to another page(close dialog)
+            }
+        });
+    });
 
 #### <a name="handlebars">Registering handlebars.js templates</a>
-To use handlebars.js templates and partials you have to register them first.
+run to compile all templates found in app/templates to dist/debug/
+Partials will be registered to Handlebars.partials,
+Templates to window.JST['templateName'] by default.
 
-The findAndRegisterPartials will do this job for all handlebars.js templates.
+bbb handlebars
+or
+bbb watch
 
-It is currently done in [`main.js`](app/main.js)
-
-
+#### dynamic scripting and jQuery Mobile
+see [jQuery Mobile documentation](http://jquerymobile.com/test/docs/pages/page-scripting.html)
+There are two ways to render HTML code (loaded by template) to jQuery Mobile HTML code:
+- $.mobile.changePage({])
+- $("domNodeAccessor").create("trigger")
 
 ### <a name="grunt">Usage of grunt</a>
-It uses the grunt Backbone Boilerplate which I really recommand and supports:
 
-GRUNT, basic tasks:
+GRUNT:
 * concat - Concatenate files.
 * init - Generate project scaffolding from a predefined template.
 * lint - Validate files with JSHint.
@@ -149,7 +194,7 @@ GRUNT, basic tasks:
 * test - Run unit tests with nodeunit.
 * watch - Run predefined tasks whenever watched files change.
 
-### <a name="grunt_contrib">Grunt-Contrib</a>
+### <a name="grunt_contrib">Additional Grunt-Contrib tasks</a>
 
 [`clean`](/gruntjs/grunt-contrib/blob/master/docs/clean.md) - Clear files and folders.
 
@@ -173,7 +218,7 @@ GRUNT, basic tasks:
 
 
 
-### <a name="settings">Additional Settings</a>
+### <a name="settings">jQuery Mobile Settings</a>
 
 To support right behavior in e.g. navigation and use default backbone.js routing, use the following properties:
 
@@ -207,17 +252,16 @@ var iosDevice = ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.
 
 Backbone.history.start({ pushState: false });
 is used to work properly with forward/back buttons
+pushState: true will only work with modern browsers( fails for some mobile browsers as well)
 
 
 ### <a name="todo">TODO</a>
 
-* Make an Addy Osmani TodoMVC application out of it.
+* Make an Addy Osmani TodoMVC application out of it. -> ongoing
 * Implement good back button functionality e.g. for dialog
-* add subview support with jQuery Mobile and backbone
+* add subview support with jQuery Mobile and backbone -> partly
 * Extend documentation
 * Write a chapter in Addy Osmani Backbone fundamentals about this project
-* Introduce handlebars task like described here : https://github.com/cowboy/grunt/issues/225
-* Cleanup require.js dependency management and add view examples. 
 * Add tests ( jasmine + sinon.js + + phantom.js ? + continous integration  with jstestdriver and jenkins)
 * Make a mobile + desktop app out of it, using common coed
 
