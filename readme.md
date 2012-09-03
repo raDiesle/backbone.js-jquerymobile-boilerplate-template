@@ -57,6 +57,7 @@ On development:
 
 ##### Use case:
 For any jQuery mobile page view.
+(To e.g. support transparent dialogs, the page will be removed from the DOM when the same page is requested again)
 
 ##### How to use:
 
@@ -77,8 +78,6 @@ ConcreteExampleView = BasicView.extend({
   	}
   });
 ```
-##### Additional information
-* to e.g. support transparent dialogs, the page will be removed from the DOM when the same page is requested again.
 
 #### <a name="basicclasses_basicdialog">[`BasicDialog`](app/modules/BasicDialog.js)</a>
 
@@ -92,8 +91,6 @@ The previous page will be displayed transparent.
 - Define this.model.settings.validation.rules as validation rules. (see [jQuery.Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation/) for more information)
 - Override  onSuccessfulValidation : function(){}, which will be called,
 per default, if the form was submitted and validation is successful.
-
-
 
 ```css
 .transparent {
@@ -111,33 +108,7 @@ per default, if the form was submitted and validation is successful.
 ```
 
 ##### Examples
-
-#### <a name="basicclasses_validateable">[`Validateable`](app/modules/Validateable.js)</a>
-Extending Validateable will use the jquery.validate plugin with jquery mobile like described here:
-http://www.elijahmanor.com/2011/02/jquery-mobile-form-validation.html
-
-##### Use case
-The validate rules are part of the model under this property
-this.model.settings.validation.rules
-
-##### How to use
-- Define this.model.settings.validation.rules as validation rules. (see [jQuery.Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation/) for more information)
-- Override  onSuccessfulValidation : function(){}, which will be called,
-per default, if the form was submitted and validation is successful.
-
-```css
-label.error {
-    color: red;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 1.4;
-    margin-top: 0.5em;
-    width: 100%;
-    float: none;
-}
-```
-
-##### Examples
+```javascript
 define([
     "backbone", "modules/view/abstract/BasicDialog"],
     function (Backbone, BasicDialog) {
@@ -166,6 +137,64 @@ define([
             }
         });
     });
+```
+
+
+#### <a name="basicclasses_validateable">[`Validateable`](app/modules/Validateable.js)</a>
+Extending Validateable will use the jquery.validate plugin with jquery mobile like described here:
+http://www.elijahmanor.com/2011/02/jquery-mobile-form-validation.html
+
+##### Use case
+Pages, where validation has to be applied.
+The validate rules are part of the model under this property
+this.model.settings.validation.rules
+
+##### How to use
+- Define this.model.settings.validation.rules as validation rules. (see [jQuery.Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation/) for more information)
+- Override  onSuccessfulValidation : function(){}, which will be called,
+per default, if the form was submitted and validation is successful.
+
+```css
+label.error {
+    color: red;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-top: 0.5em;
+    width: 100%;
+    float: none;
+}
+```
+
+##### Examples
+```javascript
+define([
+    "backbone", "modules/view/abstract/Validateable"],
+    function (Backbone, Validateable) {
+        return Validateable.extend({
+            id : "editTodoDialog",
+            model : new Backbone.Model.extend({
+               settings : {
+                  validation : {
+                    rules : {
+                      title : {
+                        "required" : true,
+                        "min" : 5
+                    }
+                  }
+                }
+              },
+            }),
+            headerTitle : "Edit Todo",
+            getSpecificTemplateValues : function () {
+                return this.model.toJSON();
+            },
+            onSuccessfulValidation : function () {
+                this.model.save({title : $("#edit_title", this.el).val()});
+            }
+        });
+    });
+```
 
 #### <a name="handlebars">Registering handlebars.js templates</a>
 run to compile all templates found in app/templates to dist/debug/
