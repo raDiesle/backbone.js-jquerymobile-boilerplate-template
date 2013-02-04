@@ -63,7 +63,7 @@ For any jQuery mobile page view.
 
 * getSpecificTemplateValues() is an abstract method. The json values are used for the handlebars.js context variables.
 * id is the pageID, which will automatically load the name of the template
-* if you want to use your own page template ( instead of "baisc_page_simple"),
+* if you want to use your own page template ( instead of "basic_page_simple"),
   override getTemplateID in your class
 
 
@@ -73,10 +73,10 @@ An example usage for a simple JQM page:
 ```javascript
 ConcreteExampleView = BasicView.extend({
     id: "content",
-      getSpecificTemplateValues : function(){
+    getSpecificTemplateValues : function(){
   		return "something"
   	}
-  });
+});
 ```
 
 #### <a name="basicclasses_basicdialog">[`BasicDialog`](app/modules/BasicDialog.js)</a>
@@ -115,16 +115,16 @@ define([
         return BasicDialog.extend({
             id : "editTodoDialog",
             model : new Backbone.Model.extend({
-               settings : {
+                settings : {
                   validation : {
                     rules : {
                       title : {
                         "required" : true,
                         "min" : 5
+                      }
                     }
                   }
-                }
-              },
+                },
             }),
             headerTitle : "Edit Todo",
             transparentBackgroundPageElID : "Todos",
@@ -208,8 +208,8 @@ bbb watch
 #### dynamic scripting and jQuery Mobile
 see [jQuery Mobile documentation](http://jquerymobile.com/test/docs/pages/page-scripting.html)
 There are two ways to render HTML code (loaded by template) to jQuery Mobile HTML code:
-- $.mobile.changePage({])
-- $("domNodeAccessor").create("trigger")
+- $.mobile.changePage(domEl, {}); // [Methods & Utilities](http://jquerymobile.com/demos/1.2.0/docs/api/methods.html)
+- $("domNodeAccessor").trigger("create"); // [Scripting pages in jQuery Mobile - Enhancing new markup](http://jquerymobile.com/demos/1.2.0/docs/pages/page-scripting.html) section
 
 ### <a name="grunt">Usage of grunt</a>
 
@@ -261,8 +261,7 @@ To support right behavior in e.g. navigation and use default backbone.js routing
         $.mobile.page.prototype.options.degradeInputs.date = true; // optional
         $.mobile.page.prototype.options.domCache = false; // optional
         $.mobile.defaultDialogTransition = "none"; // optional depends on performance
-      });
-  })
+   });
 ```
 
 If you want to enable transitions per device ( where you expect good performance) you can use logic per device like described here http://backbonefu.com/2012/01/jquery-mobile-and-backbone-js-the-ugly/:
@@ -292,7 +291,7 @@ pushState: true will only work with modern browsers( fails for some mobile brows
 * Extend documentation
 * Write a chapter in Addy Osmani Backbone fundamentals about this project
 * Add tests ( jasmine + sinon.js + + phantom.js ? + continous integration  with jstestdriver and jenkins)
-* Make a mobile + desktop app out of it, using common coed
+* Make a mobile + desktop app out of it, using common code
 
 
 ##### <a name="references">References and similar projects</a>
@@ -304,7 +303,7 @@ uses the jQuery Mobile Router plugin ( extends/manipulates  the existing backbon
 - https://github.com/ccoenraets/backbone-jquerymobile uses no AMD
 
 
-The knownledge about how to run JQM with backbone is partial derived by results of several resources:
+The knowledge about how to run JQM with backbone is partially derived by results of several resources:
 
 http://stackoverflow.com/questions/10904433/jquery-mobile-require-js-and-backbone
 
