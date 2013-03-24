@@ -1,3 +1,19 @@
+# Current Status
+
+24.March.2013
+
+For more information about this project, more explanations and updates go to
+
+https://github.com/raDiesle/backbone-fundamentals/blob/gh-pages/chapters/10-mobile-applications.md
+
+as well as 
+
+https://github.com/raDiesle/backbone-fundamentals/tree/gh-pages/practicals/todo-jqm-app
+
+which was already merged with the trunk and will be released in the book.
+
+
+
 Backbone and jquerymobile JQM Boilerplate code
 ===============================================
 
